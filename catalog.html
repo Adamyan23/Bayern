@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BAYERN — Catalogue</title>
+  <meta name="theme-color" content="#4E6B78">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Armenian:wdth,wght@62.5..100,400..700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="catalog">
+
+  <header class="nav is-solid" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="BAYERN"></a>
+
+      <nav class="nav__links" aria-label="Main">
+        <a href="index.html#about" data-i18n="nav.about"></a>
+        <a href="index.html#industries" data-i18n="nav.industries"></a>
+        <a href="index.html#brands" data-i18n="nav.brands"></a>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--copper nav__cta" href="index.html#contact"><span data-i18n="nav.cta"></span></a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" class="lang__btn" data-lang="hy">HY</button>
+          <button type="button" class="lang__btn" data-lang="en">EN</button>
+          <button type="button" class="lang__btn" data-lang="ru">RU</button>
+        </div>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="mobileMenu" data-i18n-aria="nav.menu" aria-label="Menu">
+          <span class="mark" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav class="container mobile-menu__links" aria-label="Mobile">
+      <a href="index.html#about"><span class="mono">01</span><span data-i18n="nav.about"></span></a>
+      <a href="index.html#industries"><span class="mono">02</span><span data-i18n="nav.industries"></span></a>
+      <a href="index.html#brands"><span class="mono">03</span><span data-i18n="nav.brands"></span></a>
+    </nav>
+    <div class="container mobile-menu__foot">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="lang__btn" data-lang="hy">HY</button>
+        <button type="button" class="lang__btn" data-lang="en">EN</button>
+        <button type="button" class="lang__btn" data-lang="ru">RU</button>
+      </div>
+      <a class="btn btn--copper" href="index.html#contact"><span data-i18n="nav.cta"></span></a>
+    </div>
+  </div>
+
+  <main class="catalog">
+    <div class="container">
+      <a class="catalog__back link" href="index.html#brands"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-i18n="catalog.back"></span></a>
+
+      <div class="catalog__grid">
+        <div>
+          <p class="label"><span data-i18n="catalog.label"></span>&nbsp;·&nbsp;<span data-brand-num></span></p>
+          <h1 class="catalog__name" data-brand-name></h1>
+          <p class="catalog__meta mono"><span data-brand-country></span> · <span data-brand-cat></span></p>
+
+          <p class="mono catalog__range" data-i18n="catalog.range"></p>
+          <ul class="pcard__list">
+            <li data-brand-product></li>
+            <li data-brand-product></li>
+            <li data-brand-product></li>
+          </ul>
+
+          <div class="catalog__soon">
+            <span class="mark mark--lg" aria-hidden="true" style="color: var(--copper)"></span>
+            <h2 data-i18n="catalog.soon"></h2>
+            <p data-i18n="catalog.text"></p>
+            <a class="btn btn--copper" href="index.html#contact"><span data-i18n="catalog.request"></span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="catalog__media">
+          <div class="ph ph--steel"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-brand-name></span>&nbsp;· <span data-i18n="ph"></span></span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

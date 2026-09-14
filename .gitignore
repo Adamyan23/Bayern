@@ -1,0 +1,14 @@
+# Внутренние материалы — не публикуются в репозитории.
+# Если репозиторий приватный и их нужно хранить в git, удалите эти строки.
+BAYERN Brand Book (standalone).html
+info.md
+
+# Локальные настройки редактора / Claude
+.claude/
+.vscode/
+.idea/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
