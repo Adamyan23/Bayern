@@ -534,7 +534,6 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 .bcard {
   --cut: 32px;
   --card-bg: radial-gradient(75% 70% at 50% 50%, #fff 0%, #F3F2F0 55%, #E2E0DD 100%);
-  --dash: #D2A07D;
   position: relative;
   flex: none;
   width: clamp(270px, 25vw, 360px);
@@ -542,8 +541,12 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   container-type: inline-size;
   isolation: isolate;
   color: var(--deep);
-  filter: var(--shadow-light);
-  transition: transform .6s var(--ease);
+  /* объём: тонкий контур по форме карточки + мягкая и контактная тени */
+  filter:
+    drop-shadow(0 0 .6px rgba(38,55,63,.28))
+    drop-shadow(0 22px 26px rgba(38,55,63,.16))
+    drop-shadow(0 4px 6px rgba(38,55,63,.10));
+  transition: transform .6s var(--ease), filter .6s var(--ease);
   -webkit-user-drag: none;
 }
 .bcard__art {
@@ -554,24 +557,43 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
 }
 /* слой IMAGE из шаблона (#E2E0DD, 55%) — только у карточек с градиентом */
-.bcard:not([style*="--card-bg"]) .bcard__art::before {
+.bcard--tint .bcard__art::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(226, 224, 221, .55);
+}
+/* свет сверху, тень снизу и светлая кромка — карточка «выпуклая» */
+.bcard__art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,0) 26%, rgba(38,55,63,0) 62%, rgba(38,55,63,.07) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 0 0 1px rgba(255,255,255,.35), inset 0 -1px 0 rgba(38,55,63,.10);
 }
 .bcard__layer,
 .bcard__plate { position: absolute; display: block; max-width: none; }
 .bcard__layer { object-fit: cover; }
 .bcard__layer--contain { object-fit: contain; }
 .bcard__layer--photo { transition: transform .9s var(--ease); }
+.bcard__layer--logo { transition: transform .5s var(--ease); }
 .bcard__crop { overflow: hidden; }
 .bcard__crop img { position: absolute; max-width: none; }
 
-/* Плашка логотипа с медным пунктиром */
-.bcard__dash { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.bcard__dash rect { fill: none; stroke: var(--dash); stroke-width: 1.5px; stroke-dasharray: 6 4; }
-.bcard:first-child .bcard__dash rect { stroke: var(--copper); }
+/* Плашка логотипа — объёмная «кнопка» в размер прямоугольника из макета */
+.bcard__plate {
+  background-color: var(--plate, #fff);
+  border-radius: 6px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.55),
+    inset 0 -1px 0 rgba(0,0,0,.12),
+    0 0 0 1px rgba(38,55,63,.10),
+    0 8px 16px -8px rgba(38,55,63,.45),
+    0 2px 4px rgba(38,55,63,.12);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
 
 .bcard__num,
 .bcard__meta {
@@ -603,8 +625,16 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 .bcard__go svg { width: 45%; height: 45%; transition: transform .5s var(--ease); }
 
 @media (hover: hover) {
-  .bcard:hover { transform: translateY(-8px); }
+  .bcard:hover {
+    transform: translateY(-10px);
+    filter:
+      drop-shadow(0 0 .6px rgba(38,55,63,.3))
+      drop-shadow(0 32px 32px rgba(38,55,63,.2))
+      drop-shadow(0 6px 8px rgba(38,55,63,.12));
+  }
   .bcard:hover .bcard__layer--photo { transform: scale(1.04); }
+  .bcard:hover .bcard__plate { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(0,0,0,.12), 0 0 0 1px rgba(38,55,63,.10), 0 12px 20px -8px rgba(38,55,63,.5), 0 3px 6px rgba(38,55,63,.14); }
+  .bcard:hover .bcard__layer--logo { transform: translateY(-2px); }
   .bcard:hover .bcard__go { background: var(--copper); color: var(--ink); }
   .bcard:hover .bcard__go svg { transform: rotate(45deg); }
 }
@@ -678,44 +708,48 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   gap: 16px;
   margin-top: clamp(64px, 8vw, 120px);
 }
+/* Карточки ценностей — по макету media/strong points.png:
+   тёплый светлый фон, объёмный предмет справа сверху (вырезка из макета, края растворяются в фоне) */
 .value {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 260px;
-  padding: 28px 26px 30px;
-  background: rgba(202, 202, 202, .24);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  box-shadow: var(--box-shadow-light), inset 0 0 0 1px rgba(255,255,255,.6);
+  aspect-ratio: 1 / .95;
+  min-height: 270px;
+  padding: clamp(24px, 2.4vw, 34px) clamp(22px, 2.4vw, 34px) clamp(24px, 2.6vw, 36px);
+  background: linear-gradient(155deg, #F9F8F6 0%, #F5F4F2 50%, #F2F1EF 100%);
+  box-shadow: 0 26px 42px -22px rgba(38,55,63,.24), 0 3px 8px rgba(38,55,63,.05), inset 0 1px 0 rgba(255,255,255,.9);
   transition: transform .5s var(--ease), box-shadow .5s var(--ease);
 }
-/* Иконка во всю высоту плашки — на заднем плане */
-.value__icon {
+.value__art {
   position: absolute;
-  z-index: -1;
-  top: 50%;
-  right: -14%;
-  height: 112%;
-  width: auto;
-  aspect-ratio: 1;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: auto;
+  aspect-ratio: 283 / 295;
   max-width: none;
-  transform: translateY(-50%);
-  color: var(--deep);
-  opacity: .12;
-  stroke-width: 2.4px;
-  transition: transform .8s var(--ease), opacity .5s;
+  object-fit: cover;
+  object-position: right top;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 34%), linear-gradient(to bottom, #000 55%, transparent 96%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, #000 34%), linear-gradient(to bottom, #000 55%, transparent 96%);
+  mask-composite: intersect;
+  transform-origin: right top;
+  transition: transform .9s var(--ease);
 }
-.value__icon * { vector-effect: non-scaling-stroke; }
-.value__icon--round, .social svg { stroke-linecap: round; stroke-linejoin: round; }
-.value__num { margin-bottom: auto; color: var(--copper-text); }
-.value h3 { position: relative; margin-top: 48px; font: 600 22px/1.15 var(--f-display); color: var(--ink); margin-bottom: 10px; }
-.value p { position: relative; font-size: 14px; line-height: 1.6; color: var(--deep); }
+.value > :not(.value__art) { position: relative; z-index: 1; }
+.social svg { stroke-linecap: round; stroke-linejoin: round; }
+.value__num { font-size: 15px; letter-spacing: .04em; color: var(--copper-text); }
+.value__num::after { content: ""; display: block; width: 20px; height: 1.5px; margin-top: 14px; background: var(--copper); }
+.value h3 { margin-top: auto; max-width: 64%; font: 600 clamp(19px, 1.55vw, 24px)/1.22 var(--f-body); color: var(--ink); }
+.value p { margin-top: 12px; max-width: 95%; font-size: clamp(13px, 1vw, 15px); line-height: 1.6; color: var(--deep); }
 @media (hover: hover) {
-  .value:hover { transform: translateY(-4px); }
-  .value:hover .value__icon { transform: translateY(-50%) rotate(-6deg) scale(1.04); opacity: .18; }
+  .value:hover { transform: translateY(-5px); box-shadow: 0 34px 50px -24px rgba(38,55,63,.28), 0 4px 10px rgba(38,55,63,.06), inset 0 1px 0 rgba(255,255,255,.9); }
+  .value:hover .value__art { transform: scale(1.04); }
 }
 
 /* =========================================================
@@ -728,7 +762,6 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   grid-column: span 5;
   display: flex;
   flex-direction: column;
-  min-height: clamp(500px, 44vw, 660px);
   padding: clamp(20px, 2.2vw, 32px);
   position: relative;
   isolation: isolate;
@@ -746,8 +779,7 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 }
 .pcard > * { position: relative; z-index: 1; }
 .pcard--wide { grid-column: span 7; }
-.pcard--full { grid-column: 1 / -1; min-height: clamp(460px, 36vw, 560px); }
-.pcard--full .pcard__media { min-height: 200px; }
+.pcard--full { grid-column: 1 / -1; }
 .pcard__top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .pcard__go { display: inline-flex; align-items: center; gap: 12px; }
 .pcard__arrow {
@@ -759,8 +791,36 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   transition: background-color .4s, color .4s;
 }
 .pcard__arrow svg { width: 20px; height: 20px; transition: transform .5s var(--ease); }
-.pcard__media { position: relative; flex: 1; min-height: 240px; margin-block: 20px 28px; overflow: hidden; }
-.pcard__media .ph { position: absolute; inset: 0; transition: transform 1s var(--ease); }
+.pcard__media { position: relative; margin-block: 20px 28px; }
+.pcard__body { margin-top: auto; }
+
+/* Коллаж: плитки и фото в % от сетки области (704×440 / 480×440 / 1264×440) — как шаблон в Figma */
+.collage { width: 100%; overflow: hidden; }
+.collage__tile,
+.collage__img { position: absolute; display: block; max-width: none; }
+.collage__tile {
+  box-shadow: inset 0 0 0 1px rgba(38,55,63,.05), inset 0 1px 0 rgba(255,255,255,.8);
+}
+/* пустая плитка-заглушка: штриховка + крестик, как у остальных заглушек фото */
+.collage__tile--ph {
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.5), rgba(255,255,255,0) 55%),
+    repeating-linear-gradient(-45deg, rgba(38,55,63,.06) 0 1px, transparent 1px 14px);
+}
+.collage__tile--ph::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 40px; height: 40px;
+  transform: translate(-50%, -50%);
+  background:
+    linear-gradient(rgba(38,55,63,.25) 0 0) center / 100% 1px no-repeat,
+    linear-gradient(rgba(38,55,63,.25) 0 0) center / 1px 100% no-repeat;
+}
+.collage__tile--ph .ph__label { left: 12px; bottom: 10px; }
+.collage__img { transition: transform 1s var(--ease); }
+.collage__img--contain { object-fit: contain; mix-blend-mode: multiply; } /* белый фон фото растворяется в плитке */
+.collage__img--cover { object-fit: cover; }
 .pcard__cat { color: var(--copper-text); margin-bottom: 10px; }
 .pcard__name { font: 700 clamp(48px, 5.6vw, 96px)/.86 var(--f-display); text-transform: uppercase; }
 .pcard__list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
@@ -774,7 +834,8 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 }
 @media (hover: hover) {
   .pcard:hover { --c: 56px; }
-  .pcard:hover .pcard__media .ph { transform: scale(1.05); }
+  .pcard:hover .collage__img--contain { transform: scale(1.05); }
+  .pcard:hover .collage__img--cover { transform: scale(1.03); }
   .pcard:hover .pcard__arrow { background: var(--copper); }
   .pcard:hover .pcard__arrow svg { transform: rotate(45deg); }
 }
@@ -1126,9 +1187,10 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   .drag-hint { justify-self: start; }
   .about__grid, .ind__grid, .faq__grid, .contact__grid, .catalog__grid { grid-template-columns: 1fr; }
   .about__collage { order: 2; }
-  .faq__head { position: static; }
+  .faq__head { position: relative; top: auto; }
   .ind__gallery { position: static; }
-  .pcard, .pcard--wide, .pcard--full { grid-column: 1 / -1; min-height: 520px; }
+  .pcard, .pcard--wide, .pcard--full { grid-column: 1 / -1; }
+  .collage--full { aspect-ratio: 704 / 440 !important; }
   .catalog__media { min-height: 300px; }
 }
 
@@ -1143,7 +1205,6 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   .about__collage { height: 440px; gap: 10px; }
   .about__mv { grid-template-columns: 1fr; gap: 24px; }
   .values { grid-template-columns: 1fr; }
-  .value { min-height: 200px; }
   .ind__gallery { grid-template-rows: 180px 140px; gap: 8px; }
   .ind__gallery .ph__label { display: none; }
   .faq__q { grid-template-columns: 32px minmax(0, 1fr) 32px; gap: 12px; padding: 22px 0; }
@@ -1152,9 +1213,9 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   .form__grid { grid-template-columns: 1fr; gap: 24px; }
   .btn--lg { width: 100%; }
   .footer__top { grid-template-columns: 1fr; gap: 32px; }
-  .faq__qmark { left: 70%; font-size: 320px; }
+  .faq__qmark { left: 72%; font-size: 300px; }
   .footer__bottom { flex-direction: column; }
-  .pcard, .pcard--wide, .pcard--full { min-height: 460px; }
+
   .tabs button { font-size: 13px; }
 }
 

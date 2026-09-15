@@ -152,25 +152,25 @@
           <div class="container">
             <ul class="values">
               <li class="value reveal">
-                <svg class="value__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/><path d="M12 2v7M12 15v7M2 12h7M15 12h7"/></svg>
+                <img class="value__art" src="assets/img/values/value-1.jpg" alt="" loading="lazy" decoding="async">
                 <span class="value__num mono">01</span>
                 <h3 data-i18n="value.1.title"></h3>
                 <p data-i18n="value.1.text"></p>
               </li>
               <li class="value reveal" style="--d:.08s">
-                <svg class="value__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.8-3.4 8-8 9-4.6-1-8-4.2-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+                <img class="value__art" src="assets/img/values/value-2.jpg" alt="" loading="lazy" decoding="async">
                 <span class="value__num mono">02</span>
                 <h3 data-i18n="value.2.title"></h3>
                 <p data-i18n="value.2.text"></p>
               </li>
               <li class="value reveal" style="--d:.16s">
-                <svg class="value__icon value__icon--round" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+                <img class="value__art" src="assets/img/values/value-3.jpg" alt="" loading="lazy" decoding="async">
                 <span class="value__num mono">03</span>
                 <h3 data-i18n="value.3.title"></h3>
                 <p data-i18n="value.3.text"></p>
               </li>
               <li class="value reveal" style="--d:.24s">
-                <svg class="value__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h5l3-7 4 14 3-7h5"/></svg>
+                <img class="value__art" src="assets/img/values/value-4.jpg" alt="" loading="lazy" decoding="async">
                 <span class="value__num mono">04</span>
                 <h3 data-i18n="value.4.title"></h3>
                 <p data-i18n="value.4.text"></p>
@@ -198,10 +198,11 @@
 
         <div class="carousel" data-carousel>
           <div class="carousel__track">
-            <a class="bcard" href="#brand-weber-mt" draggable="false">
+            <!-- portfolio:start -->
+            <a class="bcard bcard--tint" href="#brand-weber-mt" draggable="false">
               <div class="bcard__art" aria-hidden="true">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/weber-mt/weber3.png" style="left:3.333%;top:41.458%;width:36.944%;height:43.958%" alt="" draggable="false" loading="lazy" decoding="async">
-                <span class="bcard__plate" style="left:3.611%;top:1.458%;width:66.944%;height:15.417%;background:#313436"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <span class="bcard__plate" style="left:3.611%;top:1.458%;width:66.944%;height:15.417%;--plate:#313436"></span>
                 <img class="bcard__layer bcard__layer--logo" src="assets/img/portfolio/weber-mt/webermt-logo.png" style="left:5%;top:2.5%;width:64.167%;height:13.125%" alt="" draggable="false" loading="lazy" decoding="async">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/weber-mt/weber2.webp" style="left:18.333%;top:29.167%;width:79.722%;height:68.75%" alt="" draggable="false" loading="lazy" decoding="async">
               </div>
@@ -212,8 +213,8 @@
             </a>
             <a class="bcard" href="#brand-imer" style="--card-bg:#FFFFFF" draggable="false">
               <div class="bcard__art" aria-hidden="true">
-                <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/imer/imer2.jpg" style="left:1.111%;top:13.333%;width:100%;height:92.917%" alt="" draggable="false" loading="lazy" decoding="async">
-                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;background:#EFEFEF"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/imer/imer2.webp" style="left:1.111%;top:13.333%;width:100%;height:92.917%" alt="" draggable="false" loading="lazy" decoding="async">
+                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;--plate:#EFEFEF"></span>
                 <img class="bcard__layer bcard__layer--logo" src="assets/img/portfolio/imer/imer-logo.png" style="left:13.056%;top:2.292%;width:44.722%;height:13.333%" alt="" draggable="false" loading="lazy" decoding="async">
               </div>
               <h3 class="sr-only">IMER</h3>
@@ -221,9 +222,9 @@
               <p class="bcard__meta mono"><span data-i18n="country.it"></span> · <span data-i18n="cat.access"></span></p>
               <span class="bcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
             </a>
-            <a class="bcard" href="#brand-enar" draggable="false">
+            <a class="bcard bcard--tint" href="#brand-enar" draggable="false">
               <div class="bcard__art" aria-hidden="true">
-                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;background:#313436"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;--plate:#313436"></span>
                 <img class="bcard__layer bcard__layer--logo bcard__layer--contain" src="assets/img/portfolio/enar/enar-logo.svg" style="left:2.778%;top:2.708%;width:65.556%;height:12.5%" alt="" draggable="false" loading="lazy" decoding="async">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/enar/enar3.webp" style="left:16.944%;top:10.208%;width:78.889%;height:59.167%" alt="" draggable="false" loading="lazy" decoding="async">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/enar/enar4.webp" style="left:0.556%;top:34.583%;width:97.222%;height:72.917%" alt="" draggable="false" loading="lazy" decoding="async">
@@ -235,8 +236,8 @@
             </a>
             <a class="bcard" href="#brand-kern-deudiam" style="--card-bg:#FFFFFF" draggable="false">
               <div class="bcard__art" aria-hidden="true">
-                <span class="bcard__plate" style="left:2.222%;top:1.667%;width:66.944%;height:15.417%;background:#FFFFFF"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
-                <span class="bcard__layer bcard__layer--logo bcard__crop" style="left:10.556%;top:3.125%;width:47.778%;height:12.5%"><img src="assets/img/portfolio/kern-deudiam/kern-logo.jpg" style="width:100.258%;height:161.667%;left:-0.129%;top:-31.667%" alt="" draggable="false" loading="lazy" decoding="async"></span>
+                <span class="bcard__plate" style="left:2.222%;top:1.667%;width:66.944%;height:15.417%;--plate:#FFFFFF"></span>
+                <span class="bcard__layer bcard__layer--logo bcard__crop" style="left:10.556%;top:3.125%;width:47.778%;height:12.5%"><img src="assets/img/portfolio/kern-deudiam/kern-logo.webp" style="width:100.258%;height:161.667%;left:-0.129%;top:-31.667%" alt="" draggable="false" loading="lazy" decoding="async"></span>
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/kern-deudiam/kern6.jpg" style="left:25.556%;top:21.875%;width:64.722%;height:77.083%" alt="" draggable="false" loading="lazy" decoding="async">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/kern-deudiam/kern7.webp" style="left:-16.111%;top:29.167%;width:59.722%;height:44.792%" alt="" draggable="false" loading="lazy" decoding="async">
               </div>
@@ -245,11 +246,11 @@
               <p class="bcard__meta mono"><span data-i18n="country.de"></span> · <span data-i18n="cat.diamond"></span></p>
               <span class="bcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
             </a>
-            <a class="bcard" href="#brand-ofmer" draggable="false">
+            <a class="bcard bcard--tint" href="#brand-ofmer" draggable="false">
               <div class="bcard__art" aria-hidden="true">
-                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;background:#313436"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;--plate:#313436"></span>
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/ofmer/ofmer3.webp" style="left:4.167%;top:18.125%;width:116.111%;height:87.292%" alt="" draggable="false" loading="lazy" decoding="async">
-                <img class="bcard__layer bcard__layer--logo" src="assets/img/portfolio/ofmer/ofmer-logo.png" style="left:7.5%;top:4.583%;width:60.833%;height:8.542%" alt="" draggable="false" loading="lazy" decoding="async">
+                <img class="bcard__layer bcard__layer--logo" src="assets/img/portfolio/ofmer/ofmer-logo.webp" style="left:7.5%;top:4.583%;width:60.833%;height:8.542%" alt="" draggable="false" loading="lazy" decoding="async">
               </div>
               <h3 class="sr-only">Ofmer</h3>
               <span class="bcard__num mono">05 · IT</span>
@@ -259,7 +260,7 @@
             <a class="bcard" href="#brand-geda" style="--card-bg:#FFFFFF" draggable="false">
               <div class="bcard__art" aria-hidden="true">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/geda/geda5.jpg" style="left:5%;top:24.792%;width:101.389%;height:76.042%" alt="" draggable="false" loading="lazy" decoding="async">
-                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;background:#FFFFFF"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <span class="bcard__plate" style="left:2.778%;top:1.25%;width:66.944%;height:15.417%;--plate:#FFFFFF"></span>
                 <img class="bcard__layer bcard__layer--logo" src="assets/img/portfolio/geda/geda-logo.png" style="left:15%;top:3.333%;width:42.5%;height:11.042%" alt="" draggable="false" loading="lazy" decoding="async">
               </div>
               <h3 class="sr-only">Geda</h3>
@@ -269,7 +270,7 @@
             </a>
             <a class="bcard" href="#brand-dynapac" style="--card-bg:#ECEBE9" draggable="false">
               <div class="bcard__art" aria-hidden="true">
-                <span class="bcard__plate" style="left:2.222%;top:1.667%;width:66.944%;height:15.417%;background:#9A2A20"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <span class="bcard__plate" style="left:2.222%;top:1.667%;width:66.944%;height:15.417%;--plate:#9A2A20"></span>
                 <img class="bcard__layer bcard__layer--logo" src="assets/img/portfolio/dynapac/dynapac-logo.png" style="left:2.778%;top:3.125%;width:66.111%;height:12.5%" alt="" draggable="false" loading="lazy" decoding="async">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/dynapac/dynapac4.webp" style="left:0%;top:25.625%;width:105.833%;height:59.792%" alt="" draggable="false" loading="lazy" decoding="async">
               </div>
@@ -281,7 +282,7 @@
             <a class="bcard" href="#brand-hatz" style="--card-bg:#E5E5E5" draggable="false">
               <div class="bcard__art" aria-hidden="true">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/hatz/hatz4.webp" style="left:-16.389%;top:33.542%;width:141.944%;height:66.458%" alt="" draggable="false" loading="lazy" decoding="async">
-                <span class="bcard__plate" style="left:2.222%;top:1.875%;width:66.944%;height:15.417%;background:#DA281B"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <span class="bcard__plate" style="left:2.222%;top:1.875%;width:66.944%;height:15.417%;--plate:#DA281B"></span>
                 <span class="bcard__layer bcard__layer--logo bcard__crop" style="left:12.222%;top:2.708%;width:46.944%;height:12.708%"><img src="assets/img/portfolio/hatz/hatz-logo.webp" style="width:100%;height:249.484%;left:0%;top:-121.508%" alt="" draggable="false" loading="lazy" decoding="async"></span>
               </div>
               <h3 class="sr-only">Hatz</h3>
@@ -292,7 +293,7 @@
             <a class="bcard" href="#brand-yanmar" style="--card-bg:#FFFFFF" draggable="false">
               <div class="bcard__art" aria-hidden="true">
                 <img class="bcard__layer bcard__layer--photo" src="assets/img/portfolio/yanmar/yanmar3.jpg" style="left:10.556%;top:17.708%;width:97.222%;height:81.042%" alt="" draggable="false" loading="lazy" decoding="async">
-                <span class="bcard__plate" style="left:2.222%;top:1.667%;width:66.944%;height:15.417%;background:#FFFFFF"><svg class="bcard__dash" aria-hidden="true"><rect x="0.75" y="0.75" width="calc(100% - 1.5px)" height="calc(100% - 1.5px)"/></svg></span>
+                <span class="bcard__plate" style="left:2.222%;top:1.667%;width:66.944%;height:15.417%;--plate:#FFFFFF"></span>
                 <span class="bcard__layer bcard__layer--logo bcard__crop" style="left:2.778%;top:3.75%;width:63.889%;height:11.667%"><img src="assets/img/portfolio/yanmar/yanmar-logo.png" style="width:110.217%;height:100%;left:-3.043%;top:0%" alt="" draggable="false" loading="lazy" decoding="async"></span>
               </div>
               <h3 class="sr-only">Yanmar</h3>
@@ -300,6 +301,7 @@
               <p class="bcard__meta mono"><span data-i18n="country.jp"></span> · <span data-i18n="cat.compact"></span></p>
               <span class="bcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
             </a>
+            <!-- portfolio:end -->
           </div>
         </div>
       </section>
@@ -352,95 +354,125 @@
         </div>
 
         <div class="container bento">
+          <!-- brands:start -->
           <a class="pcard pcard--wide reveal" id="brand-weber-mt" href="catalog.html?brand=weber-mt">
-            <div class="pcard__top mono"><span>01 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--steel"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>Weber MT · <span data-i18n="ph"></span></span></div></div>
+            <div class="pcard__top mono"><span>01 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--wide" style="aspect-ratio:704 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:60.795%;height:100%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:0%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:50.909%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
+            </div>
             <div class="pcard__body">
               <p class="pcard__cat mono" data-i18n="cat.compaction"></p>
               <h3 class="pcard__name">Weber MT</h3>
               <ul class="pcard__list"><li data-i18n="weber.p1"></li><li data-i18n="weber.p2"></li><li data-i18n="weber.p3"></li></ul>
             </div>
           </a>
-
-          <a class="pcard reveal" id="brand-enar" href="catalog.html?brand=enar" style="--d:.1s">
-            <div class="pcard__top mono"><span>02 · <span data-i18n="country.es"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--concrete"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>ENAR · <span data-i18n="ph"></span></span></div></div>
-            <div class="pcard__body">
-              <p class="pcard__cat mono" data-i18n="cat.concrete"></p>
-              <h3 class="pcard__name">ENAR</h3>
-              <ul class="pcard__list"><li data-i18n="enar.p1"></li><li data-i18n="enar.p2"></li><li data-i18n="enar.p3"></li></ul>
+          <a class="pcard reveal" id="brand-imer" href="catalog.html?brand=imer" style="--d:.1s">
+            <div class="pcard__top mono"><span>02 · <span data-i18n="country.it"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--narrow" style="aspect-ratio:480 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:100%;height:60.909%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:50.833%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
             </div>
-          </a>
-
-          <a class="pcard reveal" id="brand-ofmer" href="catalog.html?brand=ofmer">
-            <div class="pcard__top mono"><span>03 · <span data-i18n="country.it"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--sand"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>Ofmer · <span data-i18n="ph"></span></span></div></div>
-            <div class="pcard__body">
-              <p class="pcard__cat mono" data-i18n="cat.rebar"></p>
-              <h3 class="pcard__name">Ofmer</h3>
-              <ul class="pcard__list"><li data-i18n="ofmer.p1"></li><li data-i18n="ofmer.p2"></li><li data-i18n="ofmer.p3"></li></ul>
-            </div>
-          </a>
-
-          <a class="pcard pcard--wide reveal" id="brand-geda" href="catalog.html?brand=geda" style="--d:.1s">
-            <div class="pcard__top mono"><span>04 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--deep"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>Geda · <span data-i18n="ph"></span></span></div></div>
-            <div class="pcard__body">
-              <p class="pcard__cat mono" data-i18n="cat.lifting"></p>
-              <h3 class="pcard__name">Geda</h3>
-              <ul class="pcard__list"><li data-i18n="geda.p1"></li><li data-i18n="geda.p2"></li><li data-i18n="geda.p3"></li></ul>
-            </div>
-          </a>
-
-          <a class="pcard pcard--wide reveal" id="brand-imer" href="catalog.html?brand=imer">
-            <div class="pcard__top mono"><span>05 · <span data-i18n="country.it"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--steel"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>IMER · <span data-i18n="ph"></span></span></div></div>
             <div class="pcard__body">
               <p class="pcard__cat mono" data-i18n="cat.access"></p>
               <h3 class="pcard__name">IMER</h3>
               <ul class="pcard__list"><li data-i18n="imer.p1"></li><li data-i18n="imer.p2"></li><li data-i18n="imer.p3"></li></ul>
             </div>
           </a>
-
-          <a class="pcard reveal" id="brand-hatz" href="catalog.html?brand=hatz" style="--d:.1s">
-            <div class="pcard__top mono"><span>06 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--sand"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>Hatz · <span data-i18n="ph"></span></span></div></div>
+          <a class="pcard reveal" id="brand-enar" href="catalog.html?brand=enar">
+            <div class="pcard__top mono"><span>03 · <span data-i18n="country.es"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--narrow" style="aspect-ratio:480 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:100%;height:60.909%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:50.833%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
+            </div>
             <div class="pcard__body">
-              <p class="pcard__cat mono" data-i18n="cat.power"></p>
-              <h3 class="pcard__name">Hatz</h3>
-              <ul class="pcard__list"><li data-i18n="hatz.p1"></li><li data-i18n="hatz.p2"></li><li data-i18n="hatz.p3"></li></ul>
+              <p class="pcard__cat mono" data-i18n="cat.concrete"></p>
+              <h3 class="pcard__name">ENAR</h3>
+              <ul class="pcard__list"><li data-i18n="enar.p1"></li><li data-i18n="enar.p2"></li><li data-i18n="enar.p3"></li></ul>
             </div>
           </a>
-
-          <a class="pcard reveal" id="brand-dynapac" href="catalog.html?brand=dynapac">
-            <div class="pcard__top mono"><span>07 · <span data-i18n="country.se"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--concrete"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>Dynapac · <span data-i18n="ph"></span></span></div></div>
-            <div class="pcard__body">
-              <p class="pcard__cat mono" data-i18n="cat.light"></p>
-              <h3 class="pcard__name">Dynapac</h3>
-              <ul class="pcard__list"><li data-i18n="dynapac.p1"></li><li data-i18n="dynapac.p2"></li><li data-i18n="dynapac.p3"></li></ul>
+          <a class="pcard pcard--wide reveal" id="brand-kern-deudiam" href="catalog.html?brand=kern-deudiam" style="--d:.1s">
+            <div class="pcard__top mono"><span>04 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--wide" style="aspect-ratio:704 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:60.795%;height:100%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:0%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:50.909%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
             </div>
-          </a>
-
-          <a class="pcard pcard--wide reveal" id="brand-yanmar" href="catalog.html?brand=yanmar" style="--d:.1s">
-            <div class="pcard__top mono"><span>08 · <span data-i18n="country.jp"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--steel"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>Yanmar · <span data-i18n="ph"></span></span></div></div>
-            <div class="pcard__body">
-              <p class="pcard__cat mono" data-i18n="cat.compact"></p>
-              <h3 class="pcard__name">Yanmar</h3>
-              <ul class="pcard__list"><li data-i18n="yanmar.p1"></li><li data-i18n="yanmar.p2"></li><li data-i18n="yanmar.p3"></li></ul>
-            </div>
-          </a>
-
-          <a class="pcard pcard--full reveal" id="brand-kern-deudiam" href="catalog.html?brand=kern-deudiam">
-            <div class="pcard__top mono"><span>09 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
-            <div class="pcard__media"><div class="ph ph--sand"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg>Kern-Deudiam · <span data-i18n="ph"></span></span></div></div>
             <div class="pcard__body">
               <p class="pcard__cat mono" data-i18n="cat.diamond"></p>
               <h3 class="pcard__name">Kern-Deudiam</h3>
               <ul class="pcard__list"><li data-i18n="kern.p1"></li><li data-i18n="kern.p2"></li><li data-i18n="kern.p3"></li></ul>
             </div>
           </a>
+          <a class="pcard pcard--wide reveal" id="brand-ofmer" href="catalog.html?brand=ofmer">
+            <div class="pcard__top mono"><span>05 · <span data-i18n="country.it"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--wide" style="aspect-ratio:704 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:60.795%;height:100%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:0%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:50.909%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
+            </div>
+            <div class="pcard__body">
+              <p class="pcard__cat mono" data-i18n="cat.rebar"></p>
+              <h3 class="pcard__name">Ofmer</h3>
+              <ul class="pcard__list"><li data-i18n="ofmer.p1"></li><li data-i18n="ofmer.p2"></li><li data-i18n="ofmer.p3"></li></ul>
+            </div>
+          </a>
+          <a class="pcard reveal" id="brand-geda" href="catalog.html?brand=geda" style="--d:.1s">
+            <div class="pcard__top mono"><span>06 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--narrow" style="aspect-ratio:480 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:100%;height:60.909%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:50.833%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
+            </div>
+            <div class="pcard__body">
+              <p class="pcard__cat mono" data-i18n="cat.lifting"></p>
+              <h3 class="pcard__name">Geda</h3>
+              <ul class="pcard__list"><li data-i18n="geda.p1"></li><li data-i18n="geda.p2"></li><li data-i18n="geda.p3"></li></ul>
+            </div>
+          </a>
+          <a class="pcard reveal" id="brand-dynapac" href="catalog.html?brand=dynapac">
+            <div class="pcard__top mono"><span>07 · <span data-i18n="country.se"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--narrow" style="aspect-ratio:480 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:100%;height:60.909%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:50.833%;top:62.727%;width:49.167%;height:37.273%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
+            </div>
+            <div class="pcard__body">
+              <p class="pcard__cat mono" data-i18n="cat.light"></p>
+              <h3 class="pcard__name">Dynapac</h3>
+              <ul class="pcard__list"><li data-i18n="dynapac.p1"></li><li data-i18n="dynapac.p2"></li><li data-i18n="dynapac.p3"></li></ul>
+            </div>
+          </a>
+          <a class="pcard pcard--wide reveal" id="brand-hatz" href="catalog.html?brand=hatz" style="--d:.1s">
+            <div class="pcard__top mono"><span>08 · <span data-i18n="country.de"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--wide" style="aspect-ratio:704 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:60.795%;height:100%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:0%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:61.932%;top:50.909%;width:38.068%;height:49.091%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
+            </div>
+            <div class="pcard__body">
+              <p class="pcard__cat mono" data-i18n="cat.power"></p>
+              <h3 class="pcard__name">Hatz</h3>
+              <ul class="pcard__list"><li data-i18n="hatz.p1"></li><li data-i18n="hatz.p2"></li><li data-i18n="hatz.p3"></li></ul>
+            </div>
+          </a>
+          <a class="pcard pcard--full reveal" id="brand-yanmar" href="catalog.html?brand=yanmar">
+            <div class="pcard__top mono"><span>09 · <span data-i18n="country.jp"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></span></div>
+            <div class="pcard__media collage collage--full" style="aspect-ratio:1264 / 440" aria-hidden="true">
+              <span class="collage__tile collage__tile--ph" style="left:0%;top:0%;width:49.051%;height:100%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 1</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:49.684%;top:0%;width:24.842%;height:100%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 2</span></span>
+              <span class="collage__tile collage__tile--ph" style="left:75.158%;top:0%;width:24.842%;height:100%;background:#F3F2F0"><span class="ph__label"><svg viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><path d="M9 10h6v6H9z"/></svg><span data-i18n="ph"></span> 3</span></span>
+            </div>
+            <div class="pcard__body">
+              <p class="pcard__cat mono" data-i18n="cat.compact"></p>
+              <h3 class="pcard__name">Yanmar</h3>
+              <ul class="pcard__list"><li data-i18n="yanmar.p1"></li><li data-i18n="yanmar.p2"></li><li data-i18n="yanmar.p3"></li></ul>
+            </div>
+          </a>
+          <!-- brands:end -->
         </div>
       </section>
 
@@ -531,14 +563,14 @@
                   <select name="brand">
                     <option value="" data-i18n="contact.brandAny"></option>
                     <option>Weber MT</option>
+                    <option>IMER</option>
                     <option>ENAR</option>
+                    <option>Kern-Deudiam</option>
                     <option>Ofmer</option>
                     <option>Geda</option>
-                    <option>IMER</option>
-                    <option>Hatz</option>
                     <option>Dynapac</option>
+                    <option>Hatz</option>
                     <option>Yanmar</option>
-                    <option>Kern-Deudiam</option>
                   </select>
                 </label>
                 <label class="field field--full" data-only="partner" hidden>

@@ -452,10 +452,6 @@
   if (carousel) initCarousel(carousel);
   initPortal();
   $$('[data-photo]').forEach(function (el) { loadPhoto(el, el.dataset.photo); });
-  $$('.pcard').forEach(function (card) {
-    var id = (card.getAttribute('href') || '').split('brand=')[1];
-    if (id) loadPhoto($('.pcard__media .ph', card), PHOTOS + 'brands/' + id + '.jpg');
-  });
   // Секция «Контакты»: волна точек (DottedSurface) цвета футера (Bayern Deep), скорость −15%
   var dots = $('[data-dotted-surface]');
   if (dots && window.DottedSurface) window.DottedSurface.mount(dots, { size: 8, opacity: 0.6, color: '78,107,120', speed: 0.85 });

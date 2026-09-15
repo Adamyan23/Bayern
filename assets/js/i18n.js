@@ -541,12 +541,12 @@ window.I18N = {
 /* Бренды: общие данные для главной и каталога */
 window.BRANDS = [
   { id: 'weber-mt', key: 'weber', name: 'Weber MT', country: 'de', cat: 'compaction' },
+  { id: 'imer',     key: 'imer',  name: 'IMER',     country: 'it', cat: 'access' },
   { id: 'enar',     key: 'enar',  name: 'ENAR',     country: 'es', cat: 'concrete' },
+  { id: 'kern-deudiam', key: 'kern', name: 'Kern-Deudiam', country: 'de', cat: 'diamond' },
   { id: 'ofmer',    key: 'ofmer', name: 'Ofmer',    country: 'it', cat: 'rebar' },
   { id: 'geda',     key: 'geda',  name: 'Geda',     country: 'de', cat: 'lifting' },
-  { id: 'imer',     key: 'imer',  name: 'IMER',     country: 'it', cat: 'access' },
-  { id: 'hatz',     key: 'hatz',  name: 'Hatz',     country: 'de', cat: 'power' },
   { id: 'dynapac',  key: 'dynapac', name: 'Dynapac', country: 'se', cat: 'light' },
-  { id: 'yanmar',   key: 'yanmar',  name: 'Yanmar',  country: 'jp', cat: 'compact' },
-  { id: 'kern-deudiam', key: 'kern', name: 'Kern-Deudiam', country: 'de', cat: 'diamond' }
+  { id: 'hatz',     key: 'hatz',  name: 'Hatz',     country: 'de', cat: 'power' },
+  { id: 'yanmar',   key: 'yanmar',  name: 'Yanmar',  country: 'jp', cat: 'compact' }
 ];

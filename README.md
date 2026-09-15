@@ -27,11 +27,14 @@ assets/
   js/logo-shape.js         — векторный контур логотипа для анимации
   js/dotted-surface.js     — волна точек в секции «Контакты»
   img/
+    portfolio/             — картинки карточек портфеля (генерируются tools/cards/assets.mjs)
     logo-white.png / .svg  — логотип (белый)
     mark.svg               — знак «B.» (усечённый куб из фавикона)
     favicon.svg            — фавикон
     photos/                — фото сайта (см. assets/img/photos/README.md)
-media/                     — исходные файлы логотипа и фавикона
+media/                     — исходники: логотип, фавикон, фото и логотипы брендов
+tools/cards/               — данные и сборка карточек брендов (Figma → сайт)
+BRANDS.md                  — данные брендов (каталоги, цвета, файлы)
 ```
 
 ## Секции главной
@@ -50,7 +53,8 @@ media/                     — исходные файлы логотипа и �
 - **Тексты** — `assets/js/i18n.js`, ключи одинаковые для `ru`, `en`, `hy`. Армянский перевод стоит проверить носителю языка.
 - **Фото** — положить файлы в `assets/img/photos/…` по инструкции [assets/img/photos/README.md](assets/img/photos/README.md). Подставляются автоматически.
 - **Цвета и шрифты** — переменные в начале `assets/css/style.css` (палитра из брендбука: Paper, Sand, Steel, Deep, Concrete, Copper; шрифты IBM Plex).
-- **Новый бренд** — добавить в `window.BRANDS` и тексты в `i18n.js`, карточки в `index.html` (карусель и секция «Бренды»), фото в `photos/brands/`.
+- **Карточки брендов** (карусель «Портфель» и коллажи в секции «Бренды») — не править в `index.html` руками: данные в `tools/cards/`, раскладка делается в Figma, пересборка — `node tools/cards/assets.mjs && node tools/cards/build.cjs`. Подробно: [tools/cards/README.md](tools/cards/README.md).
+- **Новый бренд** — добавить в `window.BRANDS` и тексты в `i18n.js`, в `tools/cards/portfolio.cjs` и `brands.cjs`, затем пересборка.
 - **Анимация hero** — `initPortal()` в `main.js`: `scrollLength` (длина полёта), `enterGap` (сколько прокрутки от белого экрана до About).
 
 ## Что осталось сделать
