@@ -112,7 +112,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: square;
 
 /* Армянский: Noto Sans Armenian в узком начертании */
 :lang(hy) .h2,
-:lang(hy) .bcard__name,
 :lang(hy) .pcard__name,
 :lang(hy) .ind__name,
 :lang(hy) .faq__q,
@@ -528,60 +527,101 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 .carousel.is-dragging { cursor: grabbing; }
 .carousel__track { display: flex; gap: 16px; width: max-content; will-change: transform; }
 
+/* =========================================================
+   Карточка портфеля — по макету Figma «BAYERN — Portfolio cards template».
+   Слои позиционированы в % от сетки 360×480, текст масштабируется от ширины карточки (cqw).
+   ========================================================= */
 .bcard {
   --cut: 32px;
+  --card-bg: radial-gradient(75% 70% at 50% 50%, #fff 0%, #F3F2F0 55%, #E2E0DD 100%);
+  --dash: #D2A07D;
   position: relative;
   flex: none;
-  width: clamp(260px, 25vw, 360px);
+  width: clamp(270px, 25vw, 360px);
   aspect-ratio: 3 / 4;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+  container-type: inline-size;
   isolation: isolate;
-  color: var(--ink);
+  color: var(--deep);
   filter: var(--shadow-light);
   transition: transform .6s var(--ease);
   -webkit-user-drag: none;
 }
-.bcard::before {
+.bcard__art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--card-bg);
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+}
+/* слой IMAGE из шаблона (#E2E0DD, 55%) — только у карточек с градиентом */
+.bcard:not([style*="--card-bg"]) .bcard__art::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background: var(--bg, var(--white));
-  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+  background: rgba(226, 224, 221, .55);
 }
-.bcard > * { position: relative; z-index: 1; }
-.bcard > .bcard__mark { position: absolute; }
-.bcard--steel { --bg: var(--steel); }
-.bcard--deep { --bg: var(--deep); color: #fff; }
-.bcard--sand { --bg: var(--sand); }
-.bcard--ink { --bg: var(--ink); color: #fff; }
-.bcard--ink .mark, .bcard--ink .bcard__top span:first-child { color: var(--copper); }
-.bcard--concrete { --bg: var(--concrete); }
-.bcard--white { --bg: var(--white); }
-.bcard--white .mark { color: var(--copper); }
+.bcard__layer,
+.bcard__plate { position: absolute; display: block; max-width: none; }
+.bcard__layer { object-fit: cover; }
+.bcard__layer--contain { object-fit: contain; }
+.bcard__layer--photo { transition: transform .9s var(--ease); }
+.bcard__crop { overflow: hidden; }
+.bcard__crop img { position: absolute; max-width: none; }
 
-.bcard__top { display: flex; justify-content: space-between; position: relative; }
-.bcard__mark {
+/* Плашка логотипа с медным пунктиром */
+.bcard__dash { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.bcard__dash rect { fill: none; stroke: var(--dash); stroke-width: 1.5px; stroke-dasharray: 6 4; }
+.bcard:first-child .bcard__dash rect { stroke: var(--copper); }
+
+.bcard__num,
+.bcard__meta {
   position: absolute;
-  right: -.06em;
-  bottom: -.2em;
-  font: 700 clamp(240px, 26vw, 380px)/1 var(--f-display);
-  opacity: .12;
-  pointer-events: none;
-  transition: transform 1s var(--ease);
+  z-index: 1;
+  margin: 0;
+  font-size: max(9px, calc(11 / 360 * 100cqw));
+  letter-spacing: .12em;
+  color: var(--deep);
+  white-space: nowrap;
 }
-.bcard__bottom { position: relative; display: grid; gap: 12px; }
-.bcard__name { font: 700 clamp(40px, 3.6vw, 58px)/.9 var(--f-display); text-transform: uppercase; }
-.bcard__meta { font-size: 11px; opacity: .9; }
-.bcard .mark { width: 36px; }
+.bcard__num { top: calc(26 / 480 * 100%); right: calc(22 / 360 * 100%); }
+.bcard__meta { top: calc(87 / 480 * 100%); left: calc(22 / 360 * 100%); right: calc(22 / 360 * 100%); white-space: normal; line-height: 1.4; }
+
+.bcard__go {
+  position: absolute;
+  z-index: 1;
+  left: calc(22 / 360 * 100%);
+  bottom: calc(22 / 480 * 100%);
+  width: calc(44 / 360 * 100%);
+  aspect-ratio: 1;
+  min-width: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: #fff;
+  transition: background-color .4s, color .4s;
+}
+.bcard__go svg { width: 45%; height: 45%; transition: transform .5s var(--ease); }
+
 @media (hover: hover) {
   .bcard:hover { transform: translateY(-8px); }
-  .bcard:hover .bcard__mark { transform: translate(-12px, -12px); }
-  .bcard:hover .mark { transform: rotate(-8deg); }
+  .bcard:hover .bcard__layer--photo { transform: scale(1.04); }
+  .bcard:hover .bcard__go { background: var(--copper); color: var(--ink); }
+  .bcard:hover .bcard__go svg { transform: rotate(45deg); }
+}
+
+/* Подсветка карточки бренда при переходе из портфеля */
+.pcard:target::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: 3;
+  border: 2px solid var(--copper);
+  pointer-events: none;
+  animation: targetFlash 2.6s var(--ease) forwards;
+}
+@keyframes targetFlash {
+  0%, 60% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* =========================================================
