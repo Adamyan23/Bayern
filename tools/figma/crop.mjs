@@ -7,6 +7,10 @@
 // Каждый фрейм становится одной картинкой WebP с прозрачностью:
 //   brand-<id>      → assets/img/photos/brands/<id>.webp
 //   industries-0N   → assets/img/photos/industries/0N.webp
+// Отдельные слоты (Hero, О компании) — каждый слот в свой JPG:
+//   hero            → assets/img/photos/hero/hero.jpg
+//   about-N         → assets/img/photos/about/about-N.jpg
+//   (полосы серого слота/подложки по краям, если фото не дотянули до края, обрезаются)
 // Плитки обрезаются точно по слотам шаблона: промежутки между ними прозрачные (на сайте у каждой
 // плитки своя тень), верхний правый угол срезан. Если фото занимает несколько слотов — промежуток под
 // ним остаётся. Полосы холста Figma у края фрейма заполняются продолжением соседнего фото.
@@ -41,6 +45,9 @@ const CUT = { brands: 56, industries: 72 };
 const OVERRIDES = createRequire(import.meta.url)('./overrides.cjs'); // ручная сборка плиток, см. overrides.cjs
 const jobs = frames.map((f) => ({ ...f, out: target(f.id), ov: OVERRIDES[f.id] || null, cut: CUT[(target(f.id) || '').split('/')[0]] || 0,
   slots: slots.filter((r) => inside(r, f)).map((r) => [r.x - f.x, r.y - f.y, r.w, r.h]), tags: tags.filter((t) => t.x >= f.x - 8 && t.y >= f.y - 8 && t.x < f.x + f.w && t.y < f.y + f.h) })).filter((j) => j.out);
+
+const SLOT_TARGET = (id) => id === 'hero' ? 'hero/hero.jpg' : (id.match(/^about-([1-3])$/) ? `about/${id}.jpg` : null);
+const slotJobs = slots.map((r) => ({ ...r, out: SLOT_TARGET(r.id) })).filter((r) => r.out);
 
 const port = 9600 + Math.floor(Math.random() * 300);
 const proc = spawn('C:/Program Files/Google/Chrome/Application/chrome.exe', ['--headless=new', `--remote-debugging-port=${port}`, `--user-data-dir=${fs.mkdtempSync(path.join(os.tmpdir(), 'bzc-'))}`, 'about:blank'], { stdio: 'ignore' });
@@ -178,7 +185,28 @@ const expr = `(async()=>{
     out.push({ out:j.out, left:[...new Set(erased)], data:c.toDataURL('image/webp',0.86) });
   }
   return out; })()`;
-const r = await send('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true });
+const slotExpr = `(async()=>{
+  const img=new Image(); img.src=${JSON.stringify('/' + png.split('/').map(encodeURIComponent).join('/'))}; await img.decode();
+  const out=[];
+  for (const j of ${JSON.stringify(slotJobs)}) {
+    const c=document.createElement('canvas'); c.width=j.w; c.height=j.h; const g=c.getContext('2d',{willReadFrequently:true});
+    g.drawImage(img,j.x,j.y,j.w,j.h,0,0,j.w,j.h);
+    const D=g.getImageData(0,0,j.w,j.h).data;
+    // пустые края: строка/столбец почти целиком цвета слота (#CACACA) или подложки (#F3F2F0)
+    const flat=(i)=>{ const r=D[i],gg=D[i+1],b=D[i+2]; return (Math.abs(r-202)+Math.abs(gg-202)+Math.abs(b-202)<=10)||(Math.abs(r-243)+Math.abs(gg-242)+Math.abs(b-240)<=8); };
+    const rowFlat=(y)=>{ let n=0; for(let x=0;x<j.w;x++) if(flat((y*j.w+x)*4)) n++; return n/j.w>0.9; };
+    const colFlat=(x)=>{ let n=0; for(let y=0;y<j.h;y++) if(flat((y*j.w+x)*4)) n++; return n/j.h>0.9; };
+    let t=0,b=j.h-1,l=0,rr=j.w-1;
+    while(t<b&&rowFlat(t))t++; while(b>t&&rowFlat(b))b--; while(l<rr&&colFlat(l))l++; while(rr>l&&colFlat(rr))rr--;
+    if (t||l||b<j.h-1||rr<j.w-1) { t+=2; l+=l?2:0; b-=b<j.h-1?2:0; rr-=rr<j.w-1?2:0; } // запас от сглаженной кромки
+    const o=document.createElement('canvas'); o.width=rr-l+1; o.height=b-t+1;
+    o.getContext('2d').drawImage(c,l,t,o.width,o.height,0,0,o.width,o.height);
+    out.push({ out:j.out, left:[], trim:[t,j.w-1-rr,j.h-1-b,l], data:o.toDataURL('image/jpeg',0.86) });
+  }
+  return out; })()`;
+const r = jobs.length
+  ? await send('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true })
+  : await send('Runtime.evaluate', { expression: slotExpr, awaitPromise: true, returnByValue: true });
 ws.close(); proc.kill();
 if (r.result.exceptionDetails) { console.error(JSON.stringify(r.result.exceptionDetails, null, 1)); process.exit(1); }
 for (const o of r.result.result.value) {
@@ -186,5 +214,5 @@ for (const o of r.result.result.value) {
   fs.mkdirSync(path.dirname(to), { recursive: true });
   const buf = Buffer.from(o.data.split(',')[1], 'base64');
   fs.writeFileSync(to, buf);
-  console.log(`${o.out} ${Math.round(buf.length / 1024)} KB${o.left.length ? '  · стёрты подписи: ' + o.left.join(', ') : ''}`);
+  console.log(`${o.out} ${Math.round(buf.length / 1024)} KB${o.trim && o.trim.some(Boolean) ? '  · обрезаны края (сверху, справа, снизу, слева): ' + o.trim.join(', ') : ''}${o.left.length ? '  · стёрты подписи: ' + o.left.join(', ') : ''}`);
 }

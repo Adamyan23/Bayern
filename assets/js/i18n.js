@@ -158,7 +158,7 @@ window.I18N = {
     'contact.phoneLabel': 'Телефон',
     'contact.emailLabel': 'Email',
     'contact.addrLabel': 'Адрес',
-    'contact.addr': 'Ереван, Армения',
+    'contact.addr': 'Ереван, пр. Азатутян 24/15',
 
     'footer.tagline': 'Строительная техника ведущих европейских и японских брендов с официальной гарантией, сервисом и запчастями.',
     'footer.nav': 'Навигация',
@@ -334,7 +334,7 @@ window.I18N = {
     'contact.phoneLabel': 'Phone',
     'contact.emailLabel': 'Email',
     'contact.addrLabel': 'Address',
-    'contact.addr': 'Yerevan, Armenia',
+    'contact.addr': 'Yerevan, Azatutyan ave. 24/15',
 
     'footer.tagline': 'Construction equipment from leading European and Japanese brands with official warranty, service and spare parts.',
     'footer.nav': 'Navigation',
@@ -510,7 +510,7 @@ window.I18N = {
     'contact.phoneLabel': 'Հեռախոս',
     'contact.emailLabel': 'Էլ. փոստ',
     'contact.addrLabel': 'Հասցե',
-    'contact.addr': 'Երևան, Հայաստան',
+    'contact.addr': 'Երևան, Ազատության պող. 24/15',
 
     'footer.tagline': 'Առաջատար եվրոպական և ճապոնական բրենդների շինարարական տեխնիկա՝ պաշտոնական երաշխիքով, սպասարկմամբ և պահեստամասերով։',
     'footer.nav': 'Նավիգացիա',

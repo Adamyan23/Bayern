@@ -675,6 +675,9 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   filter: var(--shadow-light);
 }
 .about__p1 { grid-row: 1 / 3; }
+/* объём: тень у каждого фото (drop-shadow на контейнере — учитывает срезанный угол) и светлая кромка */
+.about__collage { filter: drop-shadow(0 0 .6px rgba(38,55,63,.3)) drop-shadow(0 20px 26px rgba(38,55,63,.2)) drop-shadow(0 4px 8px rgba(38,55,63,.1)); }
+.about__collage .ph::after { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 1px 0 rgba(255,255,255,.35), inset 0 0 0 1px rgba(255,255,255,.12); }
 .about__p1 .ph__label { top: 16px; bottom: auto; }
 .about .h2 { font-size: clamp(40px, 4.8vw, 80px); }
 .about.section { padding-bottom: clamp(40px, 5vw, 72px); }
