@@ -12,3 +12,6 @@ info.md
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# временные файлы Office
+~$*
