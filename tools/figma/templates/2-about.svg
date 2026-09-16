@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1632" height="1814" viewBox="0 0 1632 1814">
+  <rect id="background" width="1632" height="1814" fill="#FFFFFF"/>
+  <text id="title" x="80" y="120" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="48" font-weight="600" fill="#26373F">BAYERN · About</text>
+  <text id="note" x="80" y="164" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="22" fill="#4E6B78">Картинку — в заливку серого слота (Fill → Image). Имя слота не менять. Экспорт: JPG, 1x.</text>
+  <g id="about">
+    <text id="label about" x="80" y="226" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">О КОМПАНИИ — коллаж</text>
+    <text id="hint about" x="80" y="270" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="20" fill="#4E6B78">about-1 — высокое слева, about-2 и about-3 — справа.</text>
+    <rect id="frame about" x="80" y="294" width="1472" height="1440" fill="#F3F2F0"/>
+    <rect id="about-1" x="80" y="294" width="754" height="1440" fill="#CACACA"/>
+    <text id="tag about-1" x="100" y="1710" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">about-1 · 754×1440</text>
+    <rect id="about-2" x="866" y="294" width="686" height="782" fill="#CACACA"/>
+    <text id="tag about-2" x="886" y="1052" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">about-2 · 686×782</text>
+    <rect id="about-3" x="866" y="1108" width="686" height="626" fill="#CACACA"/>
+    <text id="tag about-3" x="886" y="1710" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">about-3 · 686×626</text>
+  </g>
+</svg>

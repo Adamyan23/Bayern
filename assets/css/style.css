@@ -821,6 +821,14 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 .collage__img { transition: transform 1s var(--ease); }
 .collage__img--contain { object-fit: contain; mix-blend-mode: multiply; } /* белый фон фото растворяется в плитке */
 .collage__img--cover { object-fit: cover; }
+/* готовый коллаж из Figma (assets/img/photos/brands/<id>.jpg) — одной картинкой поверх заглушек */
+/* плитки с прозрачными промежутками: у каждой своя тень и кромка */
+.collage.has-photo {
+  overflow: visible;
+  background-size: 100% 100% !important;
+  filter: drop-shadow(0 0 .6px rgba(38,55,63,.28)) drop-shadow(0 14px 18px rgba(38,55,63,.16)) drop-shadow(0 3px 5px rgba(38,55,63,.08));
+}
+.collage.has-photo > * { display: none; }
 .pcard__cat { color: var(--copper-text); margin-bottom: 10px; }
 .pcard__name { font: 700 clamp(48px, 5.6vw, 96px)/.86 var(--f-display); text-transform: uppercase; }
 .pcard__list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
@@ -914,6 +922,15 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 .ind__gallery.is-swapping .g3 { animation-delay: .12s; }
 .ind__gallery.is-swapping .g4 { animation-delay: .18s; }
 @keyframes phSwap { from { opacity: .2; transform: translateY(12px); } }
+/* готовая галерея из Figma (assets/img/photos/industries/0N.jpg) — одной картинкой вместо 4 плиток */
+.ind__gallery.has-photo {
+  display: block;
+  aspect-ratio: 1434 / 1264;
+  background-size: 100% 100% !important;
+  filter: drop-shadow(0 0 .6px rgba(0,0,0,.35)) drop-shadow(0 20px 26px rgba(10,20,26,.34)) drop-shadow(0 4px 8px rgba(10,20,26,.2));
+}
+.ind__gallery.has-photo > * { display: none; }
+.ind__gallery.has-photo.is-swapping { animation: phSwap .7s var(--ease) both; }
 
 /* =========================================================
    FAQ
@@ -1190,7 +1207,7 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
   .faq__head { position: relative; top: auto; }
   .ind__gallery { position: static; }
   .pcard, .pcard--wide, .pcard--full { grid-column: 1 / -1; }
-  .collage--full { aspect-ratio: 704 / 440 !important; }
+  .collage--full:not(.has-photo) { aspect-ratio: 704 / 440 !important; }
   .catalog__media { min-height: 300px; }
 }
 

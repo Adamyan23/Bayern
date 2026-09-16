@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2688" height="5470" viewBox="0 0 2688 5470">
+  <rect id="background" width="2688" height="5470" fill="#FFFFFF"/>
+  <text id="title" x="80" y="120" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="48" font-weight="600" fill="#26373F">BAYERN · Brand collages</text>
+  <text id="note" x="80" y="164" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="22" fill="#4E6B78">Картинку — в заливку серого слота (Fill → Image). Имя слота не менять. Экспорт: JPG, 1x.</text>
+  <g id="brand-weber-mt">
+    <text id="label brand-weber-mt" x="80" y="226" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">01 · Weber MT — wide 704×440</text>
+    <rect id="frame brand-weber-mt" x="80" y="254" width="1408" height="880" fill="#F3F2F0"/>
+    <rect id="brand-weber-mt-1" x="80" y="254" width="856" height="880" fill="#CACACA"/>
+    <text id="tag brand-weber-mt-1" x="100" y="1110" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-weber-mt-1 · 856×880</text>
+    <rect id="brand-weber-mt-2" x="952" y="254" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-weber-mt-2" x="972" y="662" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="30" fill="#26373F">brand-weber-mt-2 · 536×432</text>
+    <rect id="brand-weber-mt-3" x="952" y="702" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-weber-mt-3" x="972" y="1110" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="30" fill="#26373F">brand-weber-mt-3 · 536×432</text>
+  </g>
+  <g id="brand-imer">
+    <text id="label brand-imer" x="1608" y="226" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">02 · IMER — narrow 480×440</text>
+    <rect id="frame brand-imer" x="1608" y="254" width="960" height="880" fill="#F3F2F0"/>
+    <rect id="brand-imer-1" x="1608" y="254" width="960" height="536" fill="#CACACA"/>
+    <text id="tag brand-imer-1" x="1628" y="766" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-imer-1 · 960×536</text>
+    <rect id="brand-imer-2" x="1608" y="806" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-imer-2" x="1628" y="1110" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="31" fill="#26373F">brand-imer-2 · 472×328</text>
+    <rect id="brand-imer-3" x="2096" y="806" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-imer-3" x="2116" y="1110" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="31" fill="#26373F">brand-imer-3 · 472×328</text>
+  </g>
+  <g id="brand-enar">
+    <text id="label brand-enar" x="80" y="1290" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">03 · ENAR — narrow 480×440</text>
+    <rect id="frame brand-enar" x="80" y="1318" width="960" height="880" fill="#F3F2F0"/>
+    <rect id="brand-enar-1" x="80" y="1318" width="960" height="536" fill="#CACACA"/>
+    <text id="tag brand-enar-1" x="100" y="1830" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-enar-1 · 960×536</text>
+    <rect id="brand-enar-2" x="80" y="1870" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-enar-2" x="100" y="2174" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="31" fill="#26373F">brand-enar-2 · 472×328</text>
+    <rect id="brand-enar-3" x="568" y="1870" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-enar-3" x="588" y="2174" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="31" fill="#26373F">brand-enar-3 · 472×328</text>
+  </g>
+  <g id="brand-kern-deudiam">
+    <text id="label brand-kern-deudiam" x="1160" y="1290" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">04 · Kern-Deudiam — wide 704×440</text>
+    <rect id="frame brand-kern-deudiam" x="1160" y="1318" width="1408" height="880" fill="#F3F2F0"/>
+    <rect id="brand-kern-deudiam-1" x="1160" y="1318" width="856" height="880" fill="#CACACA"/>
+    <text id="tag brand-kern-deudiam-1" x="1180" y="2174" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-kern-deudiam-1 · 856×880</text>
+    <rect id="brand-kern-deudiam-2" x="2032" y="1318" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-kern-deudiam-2" x="2052" y="1726" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="26" fill="#26373F">brand-kern-deudiam-2 · 536×432</text>
+    <rect id="brand-kern-deudiam-3" x="2032" y="1766" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-kern-deudiam-3" x="2052" y="2174" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="26" fill="#26373F">brand-kern-deudiam-3 · 536×432</text>
+  </g>
+  <g id="brand-ofmer">
+    <text id="label brand-ofmer" x="80" y="2354" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">05 · Ofmer — wide 704×440</text>
+    <rect id="frame brand-ofmer" x="80" y="2382" width="1408" height="880" fill="#F3F2F0"/>
+    <rect id="brand-ofmer-1" x="80" y="2382" width="856" height="880" fill="#CACACA"/>
+    <text id="tag brand-ofmer-1" x="100" y="3238" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-ofmer-1 · 856×880</text>
+    <rect id="brand-ofmer-2" x="952" y="2382" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-ofmer-2" x="972" y="2790" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="34" fill="#26373F">brand-ofmer-2 · 536×432</text>
+    <rect id="brand-ofmer-3" x="952" y="2830" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-ofmer-3" x="972" y="3238" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="34" fill="#26373F">brand-ofmer-3 · 536×432</text>
+  </g>
+  <g id="brand-geda">
+    <text id="label brand-geda" x="1608" y="2354" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">06 · Geda — narrow 480×440</text>
+    <rect id="frame brand-geda" x="1608" y="2382" width="960" height="880" fill="#F3F2F0"/>
+    <rect id="brand-geda-1" x="1608" y="2382" width="960" height="536" fill="#CACACA"/>
+    <text id="tag brand-geda-1" x="1628" y="2894" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-geda-1 · 960×536</text>
+    <rect id="brand-geda-2" x="1608" y="2934" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-geda-2" x="1628" y="3238" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="31" fill="#26373F">brand-geda-2 · 472×328</text>
+    <rect id="brand-geda-3" x="2096" y="2934" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-geda-3" x="2116" y="3238" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="31" fill="#26373F">brand-geda-3 · 472×328</text>
+  </g>
+  <g id="brand-dynapac">
+    <text id="label brand-dynapac" x="80" y="3418" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">07 · Dynapac — narrow 480×440</text>
+    <rect id="frame brand-dynapac" x="80" y="3446" width="960" height="880" fill="#F3F2F0"/>
+    <rect id="brand-dynapac-1" x="80" y="3446" width="960" height="536" fill="#CACACA"/>
+    <text id="tag brand-dynapac-1" x="100" y="3958" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-dynapac-1 · 960×536</text>
+    <rect id="brand-dynapac-2" x="80" y="3998" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-dynapac-2" x="100" y="4302" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">brand-dynapac-2 · 472×328</text>
+    <rect id="brand-dynapac-3" x="568" y="3998" width="472" height="328" fill="#CACACA"/>
+    <text id="tag brand-dynapac-3" x="588" y="4302" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">brand-dynapac-3 · 472×328</text>
+  </g>
+  <g id="brand-hatz">
+    <text id="label brand-hatz" x="1160" y="3418" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">08 · Hatz — wide 704×440</text>
+    <rect id="frame brand-hatz" x="1160" y="3446" width="1408" height="880" fill="#F3F2F0"/>
+    <rect id="brand-hatz-1" x="1160" y="3446" width="856" height="880" fill="#CACACA"/>
+    <text id="tag brand-hatz-1" x="1180" y="4302" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-hatz-1 · 856×880</text>
+    <rect id="brand-hatz-2" x="2032" y="3446" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-hatz-2" x="2052" y="3854" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="36" fill="#26373F">brand-hatz-2 · 536×432</text>
+    <rect id="brand-hatz-3" x="2032" y="3894" width="536" height="432" fill="#CACACA"/>
+    <text id="tag brand-hatz-3" x="2052" y="4302" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="36" fill="#26373F">brand-hatz-3 · 536×432</text>
+  </g>
+  <g id="brand-yanmar">
+    <text id="label brand-yanmar" x="80" y="4482" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">09 · Yanmar — full 1264×440</text>
+    <rect id="frame brand-yanmar" x="80" y="4510" width="2528" height="880" fill="#F3F2F0"/>
+    <rect id="brand-yanmar-1" x="80" y="4510" width="1240" height="880" fill="#CACACA"/>
+    <text id="tag brand-yanmar-1" x="100" y="5366" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">brand-yanmar-1 · 1240×880</text>
+    <rect id="brand-yanmar-2" x="1336" y="4510" width="628" height="880" fill="#CACACA"/>
+    <text id="tag brand-yanmar-2" x="1356" y="5366" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="39" fill="#26373F">brand-yanmar-2 · 628×880</text>
+    <rect id="brand-yanmar-3" x="1980" y="4510" width="628" height="880" fill="#CACACA"/>
+    <text id="tag brand-yanmar-3" x="2000" y="5366" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="39" fill="#26373F">brand-yanmar-3 · 628×880</text>
+  </g>
+</svg>

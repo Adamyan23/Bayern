@@ -52,9 +52,9 @@ function brandCard(b, i) {
   const sizeCls = b.size === 'narrow' ? '' : ` pcard--${b.size}`;
   const delay = i % 2 === 1 ? ' style="--d:.1s"' : '';
   const n = String(i + 1).padStart(2, '0');
-  return `          <a class="pcard${sizeCls} reveal" id="brand-${b.id}" href="catalog.html?brand=${b.id}"${delay}>
+  return `          <a class="pcard${sizeCls} reveal" id="brand-${b.id}" href="${b.catalog}" target="_blank" rel="noopener noreferrer"${delay}>
             <div class="pcard__top mono"><span>${n} · <span data-i18n="country.${b.country}"></span></span><span class="pcard__go"><span data-i18n="brands.more"></span><span class="pcard__arrow">${ARROW}</span></span></div>
-            <div class="pcard__media collage collage--${b.size}" style="aspect-ratio:${L.w} / ${L.h}" aria-hidden="true">
+            <div class="pcard__media collage collage--${b.size}" style="aspect-ratio:${L.w} / ${L.h}" data-photo="assets/img/photos/brands/${b.id}.webp" aria-hidden="true">
 ${layersFor(b).map((l) => '              ' + collageLayer(l, L.w, L.h)).join('\n')}
             </div>
             <div class="pcard__body">

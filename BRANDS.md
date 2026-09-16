@@ -197,7 +197,7 @@
 
 - **Карусель «Портфель»** (`index.html`, `.carousel`) собрана по макету Figma «BAYERN — Portfolio cards template»: слои (фото, плашка, логотип) расставлены в % от сетки 360×480. Файлы — `assets/img/portfolio/<id>/` (скопированы из `media/` с правильными расширениями, тяжёлые PNG → WebP). Порядок: Weber MT, IMER, ENAR, Kern-Deudiam, Ofmer, Geda, Dynapac, Hatz, Yanmar. Клик по карточке ведёт к карточке бренда `#brand-<id>` в секции «Бренды».
 - Цвета брендов на сайте **не используются** (решение заказчика) — оставлены здесь только как справка.
-- Секция «Бренды» пока ищет фото `assets/img/photos/brands/<id>.jpg` (`loadPhoto` в `assets/js/main.js`); ссылки «Каталог» ведут на заглушку `catalog.html?brand=<id>`.
+- Секция «Бренды»: коллаж из Figma одной картинкой `assets/img/photos/brands/<id>.webp` (подставляется сам) (шаблон — `tools/figma/templates/4-brands.svg`). Карточка и ссылки брендов в футере открывают официальный каталог (столбец «Каталог» выше) в новой вкладке; поле `catalog` в `tools/cards/brands.cjs`. Страница `catalog.html` пока не используется.
 
 ## 6. Данные в машиночитаемом виде
 

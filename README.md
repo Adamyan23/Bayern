@@ -18,7 +18,7 @@ python -m http.server 5500
 
 ```
 index.html                 — главная страница (лендинг)
-catalog.html               — страница бренда (catalog.html?brand=weber-mt)
+catalog.html               — заготовка страницы бренда (пока не используется: «Каталог» ведёт на сайт производителя)
 assets/
   css/style.css            — все стили: палитра, типографика, секции, адаптив
   js/i18n.js               — тексты на трёх языках + список брендов (window.BRANDS)
@@ -34,6 +34,7 @@ assets/
     photos/                — фото сайта (см. assets/img/photos/README.md)
 media/                     — исходники: логотип, фавикон, фото и логотипы брендов
 tools/cards/               — данные и сборка карточек брендов (Figma → сайт)
+tools/figma/               — шаблоны фото-слотов для Figma и раскладка экспортированных фото
 BRANDS.md                  — данные брендов (каталоги, цвета, файлы)
 ```
 
@@ -54,6 +55,7 @@ BRANDS.md                  — данные брендов (каталоги, ц
 - **Фото** — положить файлы в `assets/img/photos/…` по инструкции [assets/img/photos/README.md](assets/img/photos/README.md). Подставляются автоматически.
 - **Цвета и шрифты** — переменные в начале `assets/css/style.css` (палитра из брендбука: Paper, Sand, Steel, Deep, Concrete, Copper; шрифты IBM Plex).
 - **Карточки брендов** (карусель «Портфель» и коллажи в секции «Бренды») — не править в `index.html` руками: данные в `tools/cards/`, раскладка делается в Figma, пересборка — `node tools/cards/assets.mjs && node tools/cards/build.cjs`. Подробно: [tools/cards/README.md](tools/cards/README.md).
+- **Фото секций** (Hero, О компании, Отрасли, коллажи брендов) — шаблоны Figma и экспорт: [tools/figma/README.md](tools/figma/README.md).
 - **Новый бренд** — добавить в `window.BRANDS` и тексты в `i18n.js`, в `tools/cards/portfolio.cjs` и `brands.cjs`, затем пересборка.
 - **Анимация hero** — `initPortal()` в `main.js`: `scrollLength` (длина полёта), `enterGap` (сколько прокрутки от белого экрана до About).
 

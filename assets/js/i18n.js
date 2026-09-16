@@ -69,7 +69,7 @@ window.I18N = {
 
     'brands.label': '03 · Бренды',
     'brands.title': 'Официальный представитель',
-    'brands.text': 'Девять производителей из Европы и Японии. Каждая карточка — каталог бренда: модели, характеристики, условия поставки.',
+    'brands.text': 'Девять производителей из Европы и Японии. Карточка открывает официальный каталог производителя: модели и характеристики.',
     'brands.more': 'Каталог',
 
     'weber.p1': 'Виброплиты',
@@ -111,10 +111,8 @@ window.I18N = {
     'ind.2.text': 'Уплотнение грунта и асфальта, нарезка деформационных швов, ремонт покрытий.',
     'ind.3.name': 'Заводы ЖБИ',
     'ind.3.text': 'Вибрирование бетона в формах, гибка и резка арматуры для серийного производства.',
-    'ind.4.name': 'Арендные парки',
-    'ind.4.text': 'Техника с высоким ресурсом, запчасти в наличии и сервисное сопровождение на весь срок службы.',
-    'ind.5.name': 'Агропредприятия',
-    'ind.5.text': 'Дизельные двигатели Hatz и Yanmar для насосов, генераторов и сельскохозяйственной техники.',
+    'ind.4.name': 'Агропредприятия',
+    'ind.4.text': 'Дизельные двигатели Hatz и Yanmar для насосов, генераторов и сельскохозяйственной техники.',
 
     'faq.label': '04 · FAQ',
     'faq.title': 'Частые вопросы',
@@ -145,7 +143,6 @@ window.I18N = {
     'contact.brandAny': 'Пока не определился',
     'contact.direction': 'Направление сотрудничества',
     'contact.dir1': 'Субподряд на объектах',
-    'contact.dir2': 'Аренда техники',
     'contact.dir3': 'Дилерство / партнёрство',
     'contact.dir4': 'Другое',
     'contact.message': 'Сообщение',
@@ -248,7 +245,7 @@ window.I18N = {
 
     'brands.label': '03 · Brands',
     'brands.title': 'Authorised representative',
-    'brands.text': 'Nine manufacturers from Europe and Japan. Each card opens the brand catalogue: models, specifications, delivery terms.',
+    'brands.text': 'Nine manufacturers from Europe and Japan. Each card opens the official manufacturer catalogue: models and specifications.',
     'brands.more': 'Catalogue',
 
     'weber.p1': 'Vibratory plates',
@@ -290,10 +287,8 @@ window.I18N = {
     'ind.2.text': 'Soil and asphalt compaction, expansion joint cutting, pavement repair.',
     'ind.3.name': 'Precast concrete plants',
     'ind.3.text': 'Concrete vibration in moulds, rebar bending and cutting for serial production.',
-    'ind.4.name': 'Rental fleets',
-    'ind.4.text': 'High-endurance machines, spare parts in stock and service support for the entire service life.',
-    'ind.5.name': 'Agriculture',
-    'ind.5.text': 'Hatz and Yanmar diesel engines for pumps, generators and agricultural machinery.',
+    'ind.4.name': 'Agriculture',
+    'ind.4.text': 'Hatz and Yanmar diesel engines for pumps, generators and agricultural machinery.',
 
     'faq.label': '04 · FAQ',
     'faq.title': 'Frequently asked questions',
@@ -324,7 +319,6 @@ window.I18N = {
     'contact.brandAny': 'Not decided yet',
     'contact.direction': 'Area of cooperation',
     'contact.dir1': 'Subcontracting on sites',
-    'contact.dir2': 'Equipment rental',
     'contact.dir3': 'Dealership / partnership',
     'contact.dir4': 'Other',
     'contact.message': 'Message',
@@ -427,7 +421,7 @@ window.I18N = {
 
     'brands.label': '03 · Բրենդներ',
     'brands.title': 'Պաշտոնական ներկայացուցիչ',
-    'brands.text': 'Ինը արտադրող Եվրոպայից և Ճապոնիայից։ Յուրաքանչյուր քարտ բրենդի կատալոգն է՝ մոդելներ, բնութագրեր, մատակարարման պայմաններ։',
+    'brands.text': 'Ինը արտադրող Եվրոպայից և Ճապոնիայից։ Քարտը բացում է արտադրողի պաշտոնական կատալոգը՝ մոդելներ և բնութագրեր։',
     'brands.more': 'Կատալոգ',
 
     'weber.p1': 'Վիբրոսալեր',
@@ -469,10 +463,8 @@ window.I18N = {
     'ind.2.text': 'Գրունտի և ասֆալտի խտացում, դեֆորմացիոն կարանների կտրում, ծածկույթների վերանորոգում։',
     'ind.3.name': 'Երկաթբետոնի գործարաններ',
     'ind.3.text': 'Բետոնի վիբրացում կաղապարներում, ամրանի ծռում և կտրում սերիական արտադրության համար։',
-    'ind.4.name': 'Վարձույթի պարկեր',
-    'ind.4.text': 'Բարձր ռեսուրսով տեխնիկա, առկա պահեստամասեր և սպասարկում ամբողջ ծառայության ընթացքում։',
-    'ind.5.name': 'Ագրոձեռնարկություններ',
-    'ind.5.text': 'Hatz և Yanmar դիզելային շարժիչներ պոմպերի, գեներատորների և գյուղատնտեսական տեխնիկայի համար։',
+    'ind.4.name': 'Ագրոձեռնարկություններ',
+    'ind.4.text': 'Hatz և Yanmar դիզելային շարժիչներ պոմպերի, գեներատորների և գյուղատնտեսական տեխնիկայի համար։',
 
     'faq.label': '04 · ՀՏՀ',
     'faq.title': 'Հաճախ տրվող հարցեր',
@@ -503,7 +495,6 @@ window.I18N = {
     'contact.brandAny': 'Դեռ չեմ որոշել',
     'contact.direction': 'Համագործակցության ուղղություն',
     'contact.dir1': 'Ենթակապալ օբյեկտներում',
-    'contact.dir2': 'Տեխնիկայի վարձույթ',
     'contact.dir3': 'Դիլերություն / գործընկերություն',
     'contact.dir4': 'Այլ',
     'contact.message': 'Հաղորդագրություն',

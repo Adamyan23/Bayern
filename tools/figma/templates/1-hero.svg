@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1724" viewBox="0 0 2560 1724">
+  <rect id="background" width="2560" height="1724" fill="#FFFFFF"/>
+  <text id="title" x="80" y="120" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="48" font-weight="600" fill="#26373F">BAYERN · Hero</text>
+  <text id="note" x="80" y="164" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="22" fill="#4E6B78">Картинку — в заливку серого слота (Fill → Image). Имя слота не менять. Экспорт: JPG, 1x.</text>
+  <g id="hero">
+    <text id="label hero" x="80" y="226" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">HERO — фон за белым логотипом</text>
+    <text id="hint hero" x="80" y="270" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="20" fill="#4E6B78">Кадр средней/тёмной тональности. Пунктир — логотип, текст, видимая часть на ноутбуке и на телефоне.</text>
+    <rect id="frame hero" x="80" y="294" width="2400" height="1350" fill="#F3F2F0"/>
+    <rect id="hero" x="80" y="294" width="2400" height="1350" fill="#CACACA"/>
+    <text id="tag hero" x="100" y="1620" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">hero · 2400×1350</text>
+    <rect id="guide экран 1440×900" x="212" y="294" width="2136" height="1350" fill="none" stroke="#9A5B32" stroke-width="4" stroke-dasharray="16 12"/>
+    <text id="guide label экран 1440×900" x="228" y="338" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="28" fill="#9A5B32">экран 1440×900</text>
+    <rect id="guide логотип BAYERN" x="276" y="644" width="2008" height="515" fill="none" stroke="#9A5B32" stroke-width="4" stroke-dasharray="16 12"/>
+    <text id="guide label логотип BAYERN" x="292" y="688" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="28" fill="#9A5B32">логотип BAYERN</text>
+    <rect id="guide заголовок и цифры" x="276" y="1294" width="2008" height="330" fill="none" stroke="#9A5B32" stroke-width="4" stroke-dasharray="16 12"/>
+    <text id="guide label заголовок и цифры" x="292" y="1338" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="28" fill="#9A5B32">заголовок и цифры</text>
+    <rect id="guide телефон" x="968" y="314" width="624" height="1310" fill="none" stroke="#9A5B32" stroke-width="4" stroke-dasharray="16 12"/>
+    <text id="guide label телефон" x="984" y="358" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="28" fill="#9A5B32">телефон</text>
+  </g>
+</svg>

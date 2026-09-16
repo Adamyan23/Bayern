@@ -7,7 +7,8 @@
 //
 // Два способа описать коллаж:
 //   1) photos: [...]  — 3 фото раскладываются автоматически по шаблону LAYOUTS (главное + 2 малых).
-//      Пустой массив — пустые плитки-заглушки (сейчас так у всех: фото подбираются в Figma).
+//      Пустой массив — плитки-заглушки. Готовый коллаж из Figma (assets/img/photos/brands/<id>.webp)
+//      подставляется поверх них сам (шаблон: tools/figma/templates/4-brands.svg, нарезка: tools/figma/crop.mjs).
 //      fit: 'contain' — товар целиком на светлой плитке (белый фон фото растворяется, multiply);
 //      fit: 'cover'   — фото заполняет плитку (реальные кадры, баннеры).
 //   2) layers: [...]  — ручная раскладка из Figma (как в portfolio.cjs): { tile|src, x, y, w, h, fit }.
@@ -23,25 +24,26 @@ const LAYOUTS = {
   full: { w: 1264, h: 440, tiles: [[0, 0, 620, 440], [628, 0, 314, 440], [950, 0, 314, 440]] }
 };
 
+// catalog — официальный каталог производителя (из bayern.xlsx), открывается в новой вкладке.
 const BRANDS = [
   { id: 'weber-mt', name: 'Weber MT', country: 'de', cat: 'compaction', key: 'weber', size: 'wide',
-    photos: [] },
+    catalog: 'https://katalog.webermt.com/FlipBook_WeberMT-Katalog2025-GB/', photos: [] },
   { id: 'imer', name: 'IMER', country: 'it', cat: 'access', key: 'imer', size: 'narrow',
-    photos: [] },
+    catalog: 'https://www.imergroup.com/en/products/', photos: [] },
   { id: 'enar', name: 'ENAR', country: 'es', cat: 'concrete', key: 'enar', size: 'narrow',
-    photos: [] },
+    catalog: 'https://www.enargroup.com/eme/range/vibration/products', photos: [] },
   { id: 'kern-deudiam', name: 'Kern-Deudiam', country: 'de', cat: 'diamond', key: 'kern', size: 'wide',
-    photos: [] },
+    catalog: 'https://kern-deudiam.com/catalogues/kern-deudiam-diamond-tools-dubai/', photos: [] },
   { id: 'ofmer', name: 'Ofmer', country: 'it', cat: 'rebar', key: 'ofmer', size: 'wide',
-    photos: [] },
+    catalog: 'https://www.ofmer.com/en/products-portfolio/', photos: [] },
   { id: 'geda', name: 'Geda', country: 'de', cat: 'lifting', key: 'geda', size: 'narrow',
-    photos: [] },
+    catalog: 'https://www.geda.de/en/products/catalogue/', photos: [] },
   { id: 'dynapac', name: 'Dynapac', country: 'se', cat: 'light', key: 'dynapac', size: 'narrow',
-    photos: [] },
+    catalog: 'https://dynapac.com/en/products/light-equipment?tab=products', photos: [] },
   { id: 'hatz', name: 'Hatz', country: 'de', cat: 'power', key: 'hatz', size: 'wide',
-    photos: [] },
+    catalog: 'https://hatz.com/en-global/products', photos: [] },
   { id: 'yanmar', name: 'Yanmar', country: 'jp', cat: 'compact', key: 'yanmar', size: 'full',
-    photos: [] }
+    catalog: 'https://www.yanmar.com/global/engine/products/diesel/aircooled/', photos: [] }
 ];
 
 // Автораскладка: плитка + фото внутри (contain — с полями 8%).

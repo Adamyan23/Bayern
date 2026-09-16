@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3148" height="3046" viewBox="0 0 3148 3046">
+  <rect id="background" width="3148" height="3046" fill="#FFFFFF"/>
+  <text id="title" x="80" y="120" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="48" font-weight="600" fill="#26373F">BAYERN · Industries</text>
+  <text id="note" x="80" y="164" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="22" fill="#4E6B78">Картинку — в заливку серого слота (Fill → Image). Имя слота не менять. Экспорт: JPG, 1x.</text>
+  <g id="industries-01">
+    <text id="label industries-01" x="80" y="226" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">ОТРАСЛЬ 01 — Генподряд и монолит</text>
+    <rect id="frame industries-01" x="80" y="254" width="1434" height="1264" fill="#F3F2F0"/>
+    <rect id="industries-01-1" x="80" y="254" width="948" height="692" fill="#CACACA"/>
+    <text id="tag industries-01-1" x="100" y="922" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">industries-01-1 · 948×692</text>
+    <rect id="industries-01-2" x="1052" y="254" width="462" height="1264" fill="#CACACA"/>
+    <text id="tag industries-01-2" x="1072" y="1494" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="26" fill="#26373F">industries-01-2 · 462×1264</text>
+    <rect id="industries-01-3" x="80" y="970" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-01-3" x="100" y="1494" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-01-3 · 462×548</text>
+    <rect id="industries-01-4" x="566" y="970" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-01-4" x="586" y="1494" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-01-4 · 462×548</text>
+  </g>
+  <g id="industries-02">
+    <text id="label industries-02" x="1634" y="226" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">ОТРАСЛЬ 02 — Дороги и инфраструктура</text>
+    <rect id="frame industries-02" x="1634" y="254" width="1434" height="1264" fill="#F3F2F0"/>
+    <rect id="industries-02-1" x="1634" y="254" width="948" height="692" fill="#CACACA"/>
+    <text id="tag industries-02-1" x="1654" y="922" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">industries-02-1 · 948×692</text>
+    <rect id="industries-02-2" x="2606" y="254" width="462" height="1264" fill="#CACACA"/>
+    <text id="tag industries-02-2" x="2626" y="1494" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="26" fill="#26373F">industries-02-2 · 462×1264</text>
+    <rect id="industries-02-3" x="1634" y="970" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-02-3" x="1654" y="1494" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-02-3 · 462×548</text>
+    <rect id="industries-02-4" x="2120" y="970" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-02-4" x="2140" y="1494" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-02-4 · 462×548</text>
+  </g>
+  <g id="industries-03">
+    <text id="label industries-03" x="80" y="1674" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">ОТРАСЛЬ 03 — Заводы ЖБИ</text>
+    <rect id="frame industries-03" x="80" y="1702" width="1434" height="1264" fill="#F3F2F0"/>
+    <rect id="industries-03-1" x="80" y="1702" width="948" height="692" fill="#CACACA"/>
+    <text id="tag industries-03-1" x="100" y="2370" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">industries-03-1 · 948×692</text>
+    <rect id="industries-03-2" x="1052" y="1702" width="462" height="1264" fill="#CACACA"/>
+    <text id="tag industries-03-2" x="1072" y="2942" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="26" fill="#26373F">industries-03-2 · 462×1264</text>
+    <rect id="industries-03-3" x="80" y="2418" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-03-3" x="100" y="2942" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-03-3 · 462×548</text>
+    <rect id="industries-03-4" x="566" y="2418" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-03-4" x="586" y="2942" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-03-4 · 462×548</text>
+  </g>
+  <g id="industries-04">
+    <text id="label industries-04" x="1634" y="1674" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="32" font-weight="600" fill="#26373F">ОТРАСЛЬ 04 — Агропредприятия</text>
+    <rect id="frame industries-04" x="1634" y="1702" width="1434" height="1264" fill="#F3F2F0"/>
+    <rect id="industries-04-1" x="1634" y="1702" width="948" height="692" fill="#CACACA"/>
+    <text id="tag industries-04-1" x="1654" y="2370" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="40" fill="#26373F">industries-04-1 · 948×692</text>
+    <rect id="industries-04-2" x="2606" y="1702" width="462" height="1264" fill="#CACACA"/>
+    <text id="tag industries-04-2" x="2626" y="2942" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="26" fill="#26373F">industries-04-2 · 462×1264</text>
+    <rect id="industries-04-3" x="1634" y="2418" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-04-3" x="1654" y="2942" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-04-3 · 462×548</text>
+    <rect id="industries-04-4" x="2120" y="2418" width="462" height="548" fill="#CACACA"/>
+    <text id="tag industries-04-4" x="2140" y="2942" font-family="IBM Plex Mono, Roboto Mono, monospace" font-size="27" fill="#26373F">industries-04-4 · 462×548</text>
+  </g>
+</svg>

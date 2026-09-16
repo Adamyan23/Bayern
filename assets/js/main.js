@@ -261,8 +261,7 @@
     1: { tags: ['Weber MT', 'ENAR', 'Ofmer', 'Geda', 'IMER', 'Kern-Deudiam', 'Yanmar'], tints: ['steel', 'sand', 'concrete', 'paper'] },
     2: { tags: ['Weber MT', 'Dynapac', 'Yanmar', 'Hatz'], tints: ['concrete', 'steel', 'sand', 'deep'] },
     3: { tags: ['ENAR', 'Ofmer', 'Kern-Deudiam'], tints: ['sand', 'concrete', 'steel', 'paper'] },
-    4: { tags: ['Weber MT', 'Dynapac', 'Yanmar', 'Geda', 'IMER', 'Hatz'], tints: ['paper', 'steel', 'deep', 'sand'] },
-    5: { tags: ['Hatz', 'Yanmar'], tints: ['sand', 'paper', 'concrete', 'steel'] }
+    4: { tags: ['Hatz', 'Yanmar'], tints: ['sand', 'paper', 'concrete', 'steel'] }
   };
 
   function initIndustries() {
@@ -293,8 +292,9 @@
       phs.forEach(function (ph, i) {
         ph.className = ph.className.replace(/ph--\w+/, 'ph--' + seg.tints[i]);
         $$('[data-ind-num]', ph).forEach(function (num) { num.textContent = '0' + n; });
-        loadPhoto(ph, PHOTOS + 'industries/0' + n + '-' + (i + 1) + '.jpg');
       });
+      // галерея отрасли — одна картинка-коллаж из Figma; пока её нет, видны плитки-заглушки
+      loadPhoto(gallery, PHOTOS + 'industries/0' + n + '.webp');
       gallery.classList.remove('is-swapping');
       void gallery.offsetWidth; // перезапуск анимации
       gallery.classList.add('is-swapping');
