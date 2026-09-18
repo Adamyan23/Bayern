@@ -88,15 +88,25 @@ const expr = `(async()=>{
       while (k<cand.length && !(near(cand[k].w,j.w)&&near(cand[k].h,j.h))) k++;
       if (k>=cand.length) break;
       const f=cand[k++];
-      if (f.x!==j.x||f.y!==j.y||f.w!==j.w||f.h!==j.h) j.shift=[f.x-j.x,f.y-j.y,f.w-j.w,f.h-j.h];
-      j.src=f; // область в PNG; при отрисовке приводится к размеру шаблона
+      if (f.x===j.x&&f.y===j.y&&f.w===j.w&&f.h===j.h) continue;
+      j.shift=[f.x-j.x,f.y-j.y,f.w-j.w,f.h-j.h];
+      // режем в исходных пикселях (без пересчёта размера — иначе размывается текст подписей),
+      // а координаты шаблона пересчитываем под реальный фрейм
+      const sx=f.w/j.w, sy=f.h/j.h, s=(sx+sy)/2;
+      j.slots=j.slots.map(function(r){ return [Math.round(r[0]*sx),Math.round(r[1]*sy),Math.round(r[2]*sx),Math.round(r[3]*sy)]; });
+      j.tags=j.tags.map(function(t){ const o=Object.assign({},t);
+        o.bx=f.x+(t.bx-j.x)*sx; o.by=f.y+(t.by-j.y)*sy; o.x=o.bx; o.y=o.by-t.size*sy; o.size=t.size*s; return o; });
+      if (j.ov) { const sc=function(r){ return [Math.round(r[0]*sx),Math.round(r[1]*sy),Math.round(r[2]*sx),Math.round(r[3]*sy)]; };
+        j.ov={ clear: sc(j.ov.clear), tiles: j.ov.tiles.map(function(t){ return { rect: sc(t.rect), items: t.items.map(function(it){ return { src: it.src, box: sc(it.box) }; }) }; }) }; }
+      j.cut=Math.round(j.cut*s);
+      j.x=f.x; j.y=f.y; j.w=f.w; j.h=f.h;
     }
   }
   const out=[];
   for (const j of JOBS) {
     const c=document.createElement('canvas'); c.width=j.w; c.height=j.h;
     const g=c.getContext('2d',{willReadFrequently:true});
-    const S=j.src||j; g.drawImage(img,S.x,S.y,S.w,S.h,0,0,j.w,j.h);
+    g.drawImage(img,j.x,j.y,j.w,j.h,0,0,j.w,j.h);
     const erased=[];
     const id=g.getImageData(0,0,j.w,j.h), D=id.data;
     const P=j.w*j.h;
@@ -126,8 +136,9 @@ const expr = `(async()=>{
     const isBlend=(i)=>{ const tr=(D[i]-INK[0])/(255-INK[0]), tg=(D[i+1]-INK[1])/(255-INK[1]), tb=(D[i+2]-INK[2])/(255-INK[2]);
       return tr>0&&tr<0.93&&Math.max(tr,tg,tb)-Math.min(tr,tg,tb)<0.05; };
     for (const t of j.tags) {
-      const x0=Math.max(0,Math.floor(t.bx-j.x-10)), x1=Math.min(j.w,Math.ceil(t.bx-j.x+t.text.length*t.size*0.6+10));
-      const y0=Math.max(0,Math.floor(t.by-j.y-t.size*0.85-6)), y1=Math.min(j.h,Math.ceil(t.by-j.y+t.size*0.3+6));
+      // запас со всех сторон: фрейм в макете мог быть другого размера, и подпись смещается на несколько px
+      const x0=Math.max(0,Math.floor(t.bx-j.x-18)), x1=Math.min(j.w,Math.ceil(t.bx-j.x+t.text.length*t.size*0.62+18));
+      const y0=Math.max(0,Math.floor(t.by-j.y-t.size*1.15-18)), y1=Math.min(j.h,Math.ceil(t.by-j.y+t.size*0.45+18));
       const W=x1-x0, H=y1-y0; if (W<=0||H<=0) continue;
       const at=(x,y)=>((y+y0)*j.w+x+x0)*4;
       const core=new Uint8Array(W*H); let nCore=0;
@@ -220,7 +231,7 @@ const slotExpr = `(async()=>{
   const out=[];
   for (const j of ${JSON.stringify(slotJobs)}) {
     const c=document.createElement('canvas'); c.width=j.w; c.height=j.h; const g=c.getContext('2d',{willReadFrequently:true});
-    const S=j.src||j; g.drawImage(img,S.x,S.y,S.w,S.h,0,0,j.w,j.h);
+    g.drawImage(img,j.x,j.y,j.w,j.h,0,0,j.w,j.h);
     const D=g.getImageData(0,0,j.w,j.h).data;
     // пустые края: строка/столбец почти целиком цвета слота (#CACACA) или подложки (#F3F2F0)
     const flat=(i)=>{ const r=D[i],gg=D[i+1],b=D[i+2]; return (Math.abs(r-202)+Math.abs(gg-202)+Math.abs(b-202)<=10)||(Math.abs(r-243)+Math.abs(gg-242)+Math.abs(b-240)<=8); };
