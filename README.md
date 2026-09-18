@@ -77,6 +77,8 @@ BRANDS.md                  — данные брендов (каталоги, ц
 2. В репозитории: **Settings → Pages → Build and deployment → Source: Deploy from a branch → `main` / `(root)`**.
 3. Сайт будет доступен по адресу `https://<user>.github.io/<repo>/`.
 
+Сейчас сайт публикуется по адресу https://adamyan23.github.io/Bayern/. Как привязать домен `bayern.am` — [DEPLOY.md](DEPLOY.md).
+
 ## Лицензии сторонних частей
 
 - Анимация hero основана на **Glyph Portal** © 2026 Christian Katzmann (MIT) — уведомление сохранено в `assets/js/glyph-portal.js`.
