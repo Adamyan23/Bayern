@@ -38,7 +38,7 @@ module.exports = [
   { id: 'dynapac', name: 'Dynapac', cc: 'SE', country: 'se', cat: 'light', bg: '#ECEBE9', layers: [
     { plate: '#9A2A20', x: 8, y: 8, w: 241, h: 74 },
     { src: 'Dynapac/dynapac-logo.png', x: 10, y: 15, w: 238, h: 60, logo: true },
-    { src: 'Dynapac/dynapac4.png', x: 0, y: 123, w: 381, h: 287, photo: true }
+    { src: 'Dynapac/dynapac6.png', x: -66, y: 143, w: 474, h: 314, photo: true }
   ] },
   { id: 'hatz', name: 'Hatz', cc: 'DE', country: 'de', cat: 'power', bg: '#E5E5E5', layers: [
     { src: 'Hatz/hatz4.png', x: -59, y: 161, w: 511, h: 319, photo: true },
@@ -46,7 +46,7 @@ module.exports = [
     { src: 'Hatz/hatz-logo.png', x: 44, y: 13, w: 169, h: 61, logo: true, crop: [1, 0, 0.4008276, 0.4870357] }
   ] },
   { id: 'yanmar', name: 'Yanmar', cc: 'JP', country: 'jp', cat: 'compact', bg: '#FFFFFF', layers: [
-    { src: 'Yanmar/yanmar3.png', x: 38, y: 85, w: 350, h: 389, photo: true },
+    { src: 'Yanmar/yanmar8.png', x: -25, y: 24, w: 391, h: 489, photo: true },
     { plate: '#FFFFFF', x: 8, y: 8, w: 241, h: 74 },
     { src: 'Yanmar/yanmar-logo.png', x: 10, y: 18, w: 230, h: 56, logo: true, crop: [0.9072979, 0.0276134, 1, 0] }
   ] }

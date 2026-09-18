@@ -20,6 +20,12 @@
 
   var PHOTOS = 'assets/img/photos/';
 
+  /* ---------------- Отправка заявок ----------------
+   * Сюда вставляется ссылка на веб-приложение Google Apps Script (см. FORM.md).
+   * Пока строка пустая, форма работает «вхолостую»: показывает успех, но никуда не отправляет.
+   */
+  var FORM_URL = 'https://script.google.com/macros/s/AKfycbyaPGTGiDiwK4b6j6fcLQLLvcmXCwOlOC5IBa4jcwq0DU_s5YLadzfgY5lUEJMw6CUYZw/exec';
+
   function loadPhoto(el, src) {
     if (!el) return;
     el._photoSrc = src;
@@ -380,6 +386,15 @@
       }
     }
 
+    var formError = $('.form__note', card);
+    function showFormError(key) {
+      if (!formError) return;
+      formError.hidden = !key;
+      formError.dataset.i18n = key || '';
+      formError.textContent = key ? t(key) : '';
+      if (!key) delete formError.dataset.i18n;
+    }
+
     var checked = $$('input[required]', form);
     checked.forEach(function (input) {
       var evt = input.type === 'checkbox' ? 'change' : 'input';
@@ -401,18 +416,37 @@
       });
       if (firstInvalid) { firstInvalid.focus(); return; }
 
-      submitBtn.disabled = true;
-      // TODO: подключить отправку (почта / CRM / Formspree). Сейчас — имитация.
       var payload = Object.fromEntries(new FormData(form).entries());
-      console.info('[form] request', payload);
-      setTimeout(function () {
+      if (payload.website) return; // ловушка для спам-ботов: поле скрыто от людей
+      payload.lang = lang;
+      payload.page = location.href;
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('is-busy');
+      showFormError('');
+
+      function done() {
         submitBtn.disabled = false;
+        submitBtn.classList.remove('is-busy');
         form.reset();
         setMode(payload.type);
         form.hidden = true;
         $('.tabs', card).hidden = true;
         success.hidden = false;
-      }, 700);
+      }
+      function failed() {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('is-busy');
+        showFormError('contact.failed');
+      }
+
+      if (!FORM_URL) { console.info('[form] FORM_URL пуст — заявка никуда не отправлена', payload); setTimeout(done, 700); return; }
+
+      // text/plain — чтобы браузер не слал preflight-запрос, который Apps Script не понимает
+      fetch(FORM_URL, { method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'text/plain;charset=utf-8' } })
+        .then(function (res) { return res.json(); })
+        .then(function (res) { if (res && res.ok) done(); else throw new Error(res && res.error || 'error'); })
+        .catch(function (err) { console.error('[form] не отправлено:', err); failed(); });
     });
 
     $('[data-form-again]', card).addEventListener('click', function () {

@@ -62,11 +62,41 @@ await send('Page.navigate', { url: 'http://localhost:5500/index.html' }); await 
 const expr = `(async()=>{
   const img=new Image(); img.src=${JSON.stringify('/' + png.split('/').map(encodeURIComponent).join('/'))}; await img.decode();
   const bc0=document.createElement('canvas').getContext('2d'); bc0.drawImage(img,2,2,1,1,0,0,1,1); const BOARD=[...bc0.getImageData(0,0,1,1).data].slice(0,3);
+  const JOBS=${JSON.stringify(jobs)};
+  // Фреймы в Figma могли сдвинуться — ищем их реальное положение: полосы содержимого на фоне холста
+  {
+    const BW=img.naturalWidth, BH=img.naturalHeight;
+    const bc=document.createElement('canvas'); bc.width=BW; bc.height=BH;
+    const bg2=bc.getContext('2d',{willReadFrequently:true}); bg2.drawImage(img,0,0);
+    const BD=bg2.getImageData(0,0,BW,BH).data;
+    const isBoard=(x,y)=>{const i=(y*BW+x)*4;return Math.abs(BD[i]-BOARD[0])+Math.abs(BD[i+1]-BOARD[1])+Math.abs(BD[i+2]-BOARD[2])<=14;};
+    const rowHas=(y)=>{ for(let x=0;x<BW;x+=2) if(!isBoard(x,y)) return true; return false; };
+    const bands=[]; for(let y=0;y<BH;y++){ if(!rowHas(y)) continue; let e=y; while(e+1<BH&&rowHas(e+1)) e++; bands.push([y,e]); y=e; }
+    const found=[];
+    for (const [y0,y1] of bands) {
+      const h=y1-y0+1;
+      const colHas=(x)=>{ for(let y=y0;y<=y1;y+=2) if(!isBoard(x,y)) return true; return false; };
+      for(let x=0;x<BW;x++){ if(!colHas(x)) continue; let e=x; while(e+1<BW&&colHas(e+1)) e++; found.push({x,y:y0,w:e-x+1,h}); x=e; }
+    }
+    // кандидаты во фреймы: размер как в шаблоне (с допуском)
+    const near=(a,b)=>Math.abs(a-b)<=14;
+    const cand=found.filter((f)=>JOBS.some((j)=>near(f.w,j.w)&&near(f.h,j.h)));
+    cand.sort((a,b)=>(a.y-b.y)||(a.x-b.x));
+    // порядок фреймов в макете тот же, что в шаблоне
+    let k=0;
+    for (const j of JOBS) {
+      while (k<cand.length && !(near(cand[k].w,j.w)&&near(cand[k].h,j.h))) k++;
+      if (k>=cand.length) break;
+      const f=cand[k++];
+      if (f.x!==j.x||f.y!==j.y||f.w!==j.w||f.h!==j.h) j.shift=[f.x-j.x,f.y-j.y,f.w-j.w,f.h-j.h];
+      j.src=f; // область в PNG; при отрисовке приводится к размеру шаблона
+    }
+  }
   const out=[];
-  for (const j of ${JSON.stringify(jobs)}) {
+  for (const j of JOBS) {
     const c=document.createElement('canvas'); c.width=j.w; c.height=j.h;
     const g=c.getContext('2d',{willReadFrequently:true});
-    g.drawImage(img,j.x,j.y,j.w,j.h,0,0,j.w,j.h);
+    const S=j.src||j; g.drawImage(img,S.x,S.y,S.w,S.h,0,0,j.w,j.h);
     const erased=[];
     const id=g.getImageData(0,0,j.w,j.h), D=id.data;
     const P=j.w*j.h;
@@ -182,7 +212,7 @@ const expr = `(async()=>{
     }
     // срезанный угол сверху справа (как у плиток сайта)
     g.save(); g.globalCompositeOperation='destination-out'; g.beginPath(); g.moveTo(j.w-j.cut,0); g.lineTo(j.w,0); g.lineTo(j.w,j.cut); g.closePath(); g.fill(); g.restore();
-    out.push({ out:j.out, left:[...new Set(erased)], data:c.toDataURL('image/webp',0.86) });
+    out.push({ out:j.out, left:[...new Set(erased)], shift:j.shift, data:c.toDataURL('image/webp',0.86) });
   }
   return out; })()`;
 const slotExpr = `(async()=>{
@@ -190,7 +220,7 @@ const slotExpr = `(async()=>{
   const out=[];
   for (const j of ${JSON.stringify(slotJobs)}) {
     const c=document.createElement('canvas'); c.width=j.w; c.height=j.h; const g=c.getContext('2d',{willReadFrequently:true});
-    g.drawImage(img,j.x,j.y,j.w,j.h,0,0,j.w,j.h);
+    const S=j.src||j; g.drawImage(img,S.x,S.y,S.w,S.h,0,0,j.w,j.h);
     const D=g.getImageData(0,0,j.w,j.h).data;
     // пустые края: строка/столбец почти целиком цвета слота (#CACACA) или подложки (#F3F2F0)
     const flat=(i)=>{ const r=D[i],gg=D[i+1],b=D[i+2]; return (Math.abs(r-202)+Math.abs(gg-202)+Math.abs(b-202)<=10)||(Math.abs(r-243)+Math.abs(gg-242)+Math.abs(b-240)<=8); };
@@ -214,5 +244,5 @@ for (const o of r.result.result.value) {
   fs.mkdirSync(path.dirname(to), { recursive: true });
   const buf = Buffer.from(o.data.split(',')[1], 'base64');
   fs.writeFileSync(to, buf);
-  console.log(`${o.out} ${Math.round(buf.length / 1024)} KB${o.trim && o.trim.some(Boolean) ? '  · обрезаны края (сверху, справа, снизу, слева): ' + o.trim.join(', ') : ''}${o.left.length ? '  · стёрты подписи: ' + o.left.join(', ') : ''}`);
+  console.log(`${o.out} ${Math.round(buf.length / 1024)} KB${o.trim && o.trim.some(Boolean) ? '  · обрезаны края (сверху, справа, снизу, слева): ' + o.trim.join(', ') : ''}${o.shift ? '  · фрейм сдвинут в макете на ' + o.shift.join(', ') : ''}${o.left.length ? '  · стёрты подписи: ' + o.left.join(', ') : ''}`);
 }

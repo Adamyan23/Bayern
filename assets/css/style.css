@@ -1019,6 +1019,12 @@ html:not(.js) .hero-gp [data-gp-fallback] { display: block; }
 .contact__list a, .contact__list li > span:last-child { font: 600 clamp(20px, 1.8vw, 26px)/1.2 var(--f-display); color: var(--ink); }
 .contact__list a:hover { color: var(--deep); }
 
+/* ловушка для спам-ботов: поле не видно и недоступно людям */
+.field--hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+/* сообщение «не отправилось» под кнопкой */
+.form__note { margin-top: 16px; color: #A3372B; font-size: 12px; line-height: 1.5; }
+.btn.is-busy { opacity: .65; pointer-events: none; }
+
 .contact__card {
   --cut: 40px;
   --glass-clip: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
